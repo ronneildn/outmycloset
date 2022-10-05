@@ -1,13 +1,11 @@
 import Link from 'next/link';
 import { Fragment } from 'react';
 
-import styles from '../../styles/Home.module.css';
-
 const HomeComponent = () => {
     return (
         <Fragment>
-            <main className={styles.main}>
-                <h1 className={styles.title}>
+            <main>
+                <h1>
                     Out My Closet
                 </h1>
 
