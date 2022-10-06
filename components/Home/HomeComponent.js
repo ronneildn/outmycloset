@@ -5,7 +5,7 @@ const HomeComponent = () => {
     return (
         <Fragment>
             <main>
-                <h1>
+                <h1 >
                     Out My Closet
                 </h1>
 
