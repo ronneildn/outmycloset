@@ -9,14 +9,17 @@ export const defaultTheme = {
             light: '#b3ddfe',
             dark: '#02295d',
             background: '#fff',
-            foreground: '#333',
+            foreground: '#4d4d4d',
+            foregroundTint: '#888888',
             accent: '#d5309b',
             accent2: '#f9e84d',
+            accent3: '#4cb944',
         },
         secondary: {
             main: '#464646',
             background: '#000',
             foreground: '#fff',
+            foregroundTint: '#d9d9d9',
         },
     },
     overrides: {
@@ -40,7 +43,7 @@ export const defaultTheme = {
         }
     },
     size: {
-        pageMaxWidth: 1080
+        pageMaxWidth: 1500
     }
 };
 

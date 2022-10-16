@@ -3,6 +3,7 @@ import Grid from '@mui/material/Grid';
 import { makeStyles } from 'tss-react/mui';
 
 import PublicHeader from '../Navigation/PublicHeader';
+import PublicFooter from '../Navigation/PublicFooter';
 
 const PublicLayout = (props) => {
 
@@ -35,7 +36,7 @@ const PublicLayout = (props) => {
                 {props.children}
             </main>
             <footer>
-                Footer
+                <PublicFooter />
             </footer>
         </div>
     );

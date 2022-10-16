@@ -29,7 +29,8 @@ const useStyles = makeStyles()((theme) => ({
         fontSize: 30,
 
         ".odometer": {
-            backgroundColor: theme.palette.primary.foreground,
+            backgroundColor: theme.palette.primary.accent2,
+            color: theme.palette.secondary.background,
             borderRadius: 5,
             padding: 5
         },
@@ -40,7 +41,7 @@ const useStyles = makeStyles()((theme) => ({
             backgroundColor: theme.palette.primary.accent2,
             color: theme.palette.secondary.background,
             fontFamily: "'Gemunu Libre', sans-serif",
-            fontSize: 50,
+            fontSize: 60,
             fontWeight: 400,
             lineHeight: "55px !important",
             display: "flex",
