@@ -8,7 +8,7 @@ import HangerIcon from '@mui/icons-material/CheckroomRounded';
 import CommunityIcon from '@mui/icons-material/GroupsRounded';
 import EducationIcon from '@mui/icons-material/SchoolRounded';
 
-import SectionHeader from './SectionHeader';
+import SectionHeader from '../Presentation/SectionHeader';
 import HomeGallery from './HomeGallery';
 
 const ServicesSection = (props) => {

@@ -3,7 +3,7 @@ import { makeStyles } from 'tss-react/mui';
 import Button from '@mui/material/Button';
 import classNames from "classnames";
 
-import SectionHeader from './SectionHeader';
+import SectionHeader from '../Presentation/SectionHeader';
 
 const MerchSection = (props) => {
 

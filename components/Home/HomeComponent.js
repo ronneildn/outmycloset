@@ -18,8 +18,6 @@ const HomeComponent = (props) => {
                     <Hero />
                 </section>
 
-
-
                 <div className={classes.homeContentContainer}>
                     <ServicesSection />
                     <UpdatesSection />
@@ -39,7 +37,7 @@ const useStyles = makeStyles()((theme) => ({
 
         "h2" : {
             fontSize: 30,
-            fontWeight: 700,
+            fontWeight: 500,
         },
     },
     heroContainer: {

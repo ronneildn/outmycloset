@@ -3,8 +3,9 @@ import { makeStyles } from 'tss-react/mui';
 import classNames from "classnames";
 import Link from 'next/link';
 import Image from 'next/image';
-
 import Grid from '@mui/material/Grid';
+
+import SocialComponent from '../Social/SocialComponent';
 
 const PublicFooter = (props) => {
 
@@ -16,7 +17,7 @@ const PublicFooter = (props) => {
             label: "Home"
         },
         {
-            url: "",
+            url: "/about",
             label: "About Us"
         },
         {
@@ -39,10 +40,6 @@ const PublicFooter = (props) => {
             url: "",
             label: "Contact Us"
         }
-    ];
-
-    const social = [
-
     ];
 
     return (
@@ -77,10 +74,11 @@ const PublicFooter = (props) => {
                     </ul>
                 </div>
 
-                <div>
+                <div className={classes.socialContainer}>
                     <div className={classes.label}>
                         Connect with us on:
                     </div>
+                    <SocialComponent size={15} />
                 </div>
 
                 <div>
@@ -89,7 +87,7 @@ const PublicFooter = (props) => {
                         New York, NY
                     </div>
                     <div>
-                        Email: info@outmycloset.org
+                        Email: <a href="mailto:info@outmycloset.org" target="_blank">info@outmycloset.org</a>
                     </div>
                     <div>Copyright © 2022 Out My Closet</div>
                 </div>
@@ -104,6 +102,9 @@ const useStyles = makeStyles()((theme) => ({
         color: theme.palette.secondary.foregroundTint,
         fontSize: 14,
         textAlign: "center",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
 
         "a": {
             color: theme.palette.secondary.foregroundTint,
@@ -149,6 +150,9 @@ const useStyles = makeStyles()((theme) => ({
             display: "inline-block",
             padding: "5px 10px"
         }
+    },
+    socialContainer: {
+        marginBottom: 10
     }
 
 }));

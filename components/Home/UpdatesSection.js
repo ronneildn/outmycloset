@@ -2,7 +2,7 @@ import {Fragment} from 'react';
 import { makeStyles } from 'tss-react/mui';
 import classNames from "classnames";
 
-import SectionHeader from './SectionHeader';
+import SectionHeader from '../Presentation/SectionHeader';
 import UpdateCarousel from './UpdateCarousel';
 
 const UpdatesSection = (props) => {

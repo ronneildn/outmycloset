@@ -70,11 +70,12 @@ const useStyles = makeStyles()((theme) => ({
         textTransform: "uppercase",
         fontSize: 14,
         fontWeight: 400,
+        cursor: "pointer",
 
         "&:hover": {
             backgroundColor: theme.palette.primary.dark,
         }
-    }
+    },
 }));
 
 export default NavItems;

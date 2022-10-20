@@ -8,6 +8,7 @@ import ArrowDown from '@mui/icons-material/ExpandMoreRounded';
 
 import Donation from './Donation';
 import HeroCarousel from './HeroCarousel';
+import SocialComponent from '../Social/SocialComponent';
 
 const HeroComponent = (props) => {
 
@@ -56,6 +57,7 @@ const HeroComponent = (props) => {
                         </Grid>
                     </Grid>
                 </div>
+                <SocialComponent />
 
                 <div className={classes.footer}>
                     <ArrowDown className={classes.down} />

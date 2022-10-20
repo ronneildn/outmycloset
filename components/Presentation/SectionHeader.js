@@ -16,7 +16,7 @@ const SectionHeader = (props) => {
 
 const useStyles = makeStyles()((theme) => ({
     root: {
-        marginBottom: 40
+        marginBottom: 20
     },
 }));
 

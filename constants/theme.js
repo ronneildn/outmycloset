@@ -43,7 +43,7 @@ export const defaultTheme = {
         }
     },
     size: {
-        pageMaxWidth: 1500
+        pageMaxWidth: 1024
     }
 };
 
