@@ -8,7 +8,10 @@ const PublicContent = (props) => {
 
     return (
         <div className={classes.root}>
-            <div className={classes.contentContainer}>
+            <div
+                className={classes.contentContainer}
+                style={{padding: props.margin? 40: 0, ...props.style}}
+            >
                 {props.children}
             </div>
         </div>

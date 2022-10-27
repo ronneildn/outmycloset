@@ -14,19 +14,19 @@ const NavItems = (props) => {
         },
         {
             name: "Services",
-            url: "/about"
+            url: "/services"
         },
         {
             name: "Campaigns",
-            url: "/about"
+            url: "/campaigns"
         },
         {
             name: "News & Media",
-            url: "/about"
+            url: "/news"
         },
         {
             name: "Get Invloved",
-            url: "/about"
+            url: "/volunteer"
         },
     ];
 

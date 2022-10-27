@@ -12,7 +12,7 @@ const AboutComponent = (props) => {
 
     return (
         <div className={classes.root}>
-            <PublicContent>
+            <PublicContent margin>
                 <div className={classes.aboutContainer}>
                     <SectionHeader
                         title={"Who is Out My Closet"}
@@ -69,7 +69,7 @@ const useStyles = makeStyles()((theme) => ({
         }
     },
     aboutContainer: {
-        padding: 40
+        //padding: 40
     },
     innerContainer: {
 

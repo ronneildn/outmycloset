@@ -27,12 +27,12 @@ const PublicLayout = (props) => {
 
     return (
         <div className={classes.root} onScroll={onMainScroll}>
-            <header className={classes.root}>
+            <header className={classes.header}>
                 <PublicHeader
                     scrollOffset={offset}
                 />
             </header>
-            <main>
+            <main className={classes.main}>
                 {props.children}
             </main>
             <footer>
@@ -46,8 +46,16 @@ const useStyles = makeStyles()((theme) => ({
     root: {
         // backgroundColor: theme.palette.secondary.background,
         // color: theme.palette.secondary.foreground,
-        overflow: 'auto'
+        overflow: 'auto',
+        display: "flex",
+        flexDirection: "column",
+        minHeight: "100%"
     },
+    main: {
+        display: "flex",
+        flexDirection: "column",
+        flex: "1 1 0%"
+    }
 }));
 
 export default PublicLayout;

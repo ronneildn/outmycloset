@@ -26,7 +26,7 @@ const useStyles = makeStyles()((theme) => ({
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        fontSize: 30,
+        fontSize: 50,
 
         ".odometer": {
             backgroundColor: theme.palette.primary.accent2,
