@@ -3,20 +3,17 @@ import Head from 'next/head';
 import Image from 'next/image';
 
 import PublicLayout from '../../components/Layout/PublicLayout';
-import CampaignsComponent from '../../components/Campaigns/CampaignsComponent';
+import NewsComponent from '../../components/News/NewsComponent';
 
-export default function Campaigns(props) {
-
+export default function Home() {
     return (
         <Fragment>
             <Head>
-                <title>Camapaigns | Out My Closet</title>
+                <title>News & Media | Out My Closet</title>
             </Head>
 
             <PublicLayout>
-                <CampaignsComponent
-                    imageModal={props.imageModal}
-                />
+                <h1>News</h1>
             </PublicLayout>
         </Fragment>
     );

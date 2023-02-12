@@ -4,8 +4,10 @@ import { render } from 'react-dom';
 import { CacheProvider } from '@emotion/react';
 import createCache from '@emotion/cache';
 import { ThemeProvider } from '@mui/material/styles';
+import ImageModal from '../components/Presentation/ImageModal';
 
 import Themes from '../constants/theme.js';
+import ImageModalService from '../services/imageModalService';
 
 export const muiCache = createCache({
   key: 'mui',
@@ -20,6 +22,9 @@ import '../styles/odometer.css';
 
 
 function MyApp({ Component, pageProps }) {
+
+    const imageModal = ImageModalService();
+
     return (
         <CacheProvider value={muiCache}>
             <ThemeProvider theme={Themes.defaultTheme}>
@@ -37,7 +42,10 @@ function MyApp({ Component, pageProps }) {
                         />
                     </Head>
 
-                    <Component {...pageProps} />
+                    <Component imageModal={imageModal} {...pageProps}/>
+                    <ImageModal
+                        imageModal={imageModal}
+                    />
                 </Grid>
             </ThemeProvider>
         </CacheProvider>

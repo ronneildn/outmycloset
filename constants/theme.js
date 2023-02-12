@@ -20,6 +20,7 @@ export const defaultTheme = {
             background: '#000',
             foreground: '#fff',
             foregroundTint: '#d9d9d9',
+            light: '#f5f7f7'
         },
     },
     overrides: {

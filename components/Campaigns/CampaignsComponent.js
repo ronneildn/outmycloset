@@ -9,6 +9,7 @@ import { useTheme } from '@mui/material/styles';
 import PublicContent from '../Layout/PublicContent';
 import Header from '../Presentation/Header';
 import SectionHeader from '../Presentation/SectionHeader';
+import CampaignCarousel from './CampaignCarousel';
 
 const CamapignsComponent = (props) => {
 
@@ -67,8 +68,23 @@ const CamapignsComponent = (props) => {
                                             {item.html}
                                         </div>
                                         <div className={classes.galleryContainer}>
+                                            {!!item.gallery.length &&
+                                                <CampaignCarousel
+                                                    images={item.gallery}
+                                                    imageModal={props.imageModal}
+                                                />
+                                            }
 
                                         </div>
+                                        <div className={classes.buttonPanel}>
+                                            <div className={classes.hash}>
+                                                {item.hash}
+                                            </div>
+                                            <div>
+                                                <Button variant="contained" size="large">Donate</Button>
+                                            </div>
+                                        </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -163,6 +179,22 @@ const useStyles = makeStyles()((theme) => ({
     },
     textContainer: {
         flex: "1 1 0%",
+    },
+    buttonPanel: {
+        display: "flex",
+        flexDirection: "row",
+        alignItems: "center",
+        background: "#ededed",
+        borderRadius: 10,
+        padding: 10,
+        margin: "10px 0"
+    },
+    hash: {
+        fontSize: 20,
+        fontWeight: 700,
+        color: theme.palette.primary.foregroundTint,
+        flex: "1 1 0%",
+        paddingRight: 10
     }
 }));
 
@@ -176,7 +208,17 @@ const CAMPAIGNSDATA = [
             <p>OMC realizes that people affected by HIV/AIDS are living with the virus. We will have ongoing campaigns of testimonials from health care professionals and those living with the virus. It's TIME to STOP the clock of HIV stigma. Out My Closet shares stories of support to diminish the taboos, negative connotations and the HIV-ism that PEOPLE who are LIVING with HIV face.</p>
             <p>Youth aged 13 to 24 accounted for an estimated 26% of all new HIV infections in the United States in 2010. Most new HIV infections among youth occur among gay and bisexual males; there was a 22% increase in estimated new infections in this group from 2008 to 2010. Almost 60% of youth with HIV in the United States do not know they are infected. Youth in the United States account for a substantial number of HIV infections. Gay, bisexual, and other men who have sex with men account for most new infections in the age group 13 to 24; black/African American or Hispanic/Latino gay and bisexual men are especially affected. Continual HIV prevention outreach and education efforts, including programs on abstinence, delaying the initiation of sex, and negotiating safer sex for the spectrum of sexuality among youth are urgently needed for a new generation at risk.</p>
         </div>,
-        gallery: []
+        gallery: [
+            "/img/img_OMC365_2.jpg",
+            "/img/img_OMC365_3.jpg",
+            "/img/img_OMC365_4.jpg",
+            "/img/img_OMC365_5.jpg",
+            "/img/img_OMC365_6.jpg",
+            "/img/img_OMC365_7.jpg",
+            "/img/img_OMC365_8.jpg",
+
+        ],
+        hash: "#OMC365"
     },
     {
         name: "OMC Transform",
