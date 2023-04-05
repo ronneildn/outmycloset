@@ -11,6 +11,7 @@ const admin = (props) => {
     const {classes} = useStyles(props);
     const { data: session, status } = useSession();
 
+    console.log(status)
     //if (status === "authenticated") {
 
         return (
