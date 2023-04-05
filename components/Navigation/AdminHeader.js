@@ -43,7 +43,7 @@ const PublicHeader = (props) => {
                     </a>
                 </Link>
             </div>
-            <NavItems position="drawer"/>
+            <NavItems position="drawer" layout="admin"/>
         </Box>
     );
 
@@ -87,7 +87,7 @@ const PublicHeader = (props) => {
                         sx={{ display: { xs: 'none', sm: 'flex' } }}
                         className={classes.navContainer}
                     >
-                        <NavItems position="header"/>
+                        <NavItems position="header" layout="admin"/>
                     </Box>
                 </Toolbar>
             </AppBar>

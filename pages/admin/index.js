@@ -2,24 +2,33 @@ import {Fragment} from 'react';
 import Head from 'next/head';
 import { makeStyles } from 'tss-react/mui';
 import classNames from "classnames";
+import { useSession } from "next-auth/react"
 
 import AdminLayout from '../../components/Layout/AdminLayout';
 
 const admin = (props) => {
 
     const {classes} = useStyles(props);
+    const { data: session, status } = useSession();
 
-    return (
-        <Fragment>
-            <Head>
-                <title>Admin | Out My Closet</title>
-            </Head>
+    //if (status === "authenticated") {
 
-            <AdminLayout>
-                <h1>Admin</h1>
-            </AdminLayout>
-        </Fragment>
-    );
+        return (
+            <Fragment>
+                <Head>
+                    <title>Admin | Out My Closet</title>
+                </Head>
+
+                <AdminLayout>
+                    <h1>Admin</h1>
+                </AdminLayout>
+            </Fragment>
+        );
+    // }
+    // else {
+    //     return <a>Login</a>
+    // }
+
 };
 
 const useStyles = makeStyles()((theme) => ({

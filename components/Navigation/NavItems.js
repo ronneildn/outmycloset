@@ -7,28 +7,15 @@ const NavItems = (props) => {
 
     const {classes} = useStyles(props);
 
-    const navItems = [
-        {
-            name: "About Us",
-            url: "/about"
-        },
-        {
-            name: "Services",
-            url: "/services"
-        },
-        {
-            name: "Campaigns",
-            url: "/campaigns"
-        },
-        {
-            name: "News & Media",
-            url: "/news"
-        },
-        {
-            name: "Get Invloved",
-            url: "/volunteer"
-        },
-    ];
+    let navItems;
+    switch (props.layout) {
+    case "admin":
+        navItems = adminItems;
+        break;
+    default:
+        navItems = publicItems;
+    }
+
 
     return (
         <Fragment>
@@ -77,5 +64,39 @@ const useStyles = makeStyles()((theme) => ({
         }
     },
 }));
+
+const publicItems = [
+    {
+        name: "About Us",
+        url: "/about"
+    },
+    {
+        name: "Services",
+        url: "/services"
+    },
+    {
+        name: "Campaigns",
+        url: "/campaigns"
+    },
+    {
+        name: "News & Media",
+        url: "/news"
+    },
+    {
+        name: "Get Invloved",
+        url: "/volunteer"
+    },
+];
+
+const adminItems = [
+    {
+        name: "Dashboard",
+        url: "/admin"
+    },
+    {
+        name: "Updates",
+        url: "/admin/updates"
+    },
+];
 
 export default NavItems;
