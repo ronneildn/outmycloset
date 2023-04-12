@@ -3,9 +3,11 @@ import Head from 'next/head';
 import { render } from 'react-dom';
 import { CacheProvider } from '@emotion/react';
 import createCache from '@emotion/cache';
+import { makeStyles } from 'tss-react/mui';
 import { ThemeProvider } from '@mui/material/styles';
 import { SessionProvider } from "next-auth/react"
 import ImageModal from '../components/Presentation/ImageModal';
+import { SnackbarProvider, useSnackbar, closeSnackbar } from 'notistack';
 
 import Themes from '../constants/theme.js';
 import ImageModalService from '../services/imageModalService';
@@ -19,7 +21,6 @@ import '../styles/reset.css';
 import '../styles/globals.css';
 import '../styles/animation.css';
 import '../styles/odometer.css';
-
 
 
 function MyApp({ Component, pageProps: {session, ...pageProps} }) {
@@ -44,15 +45,29 @@ function MyApp({ Component, pageProps: {session, ...pageProps} }) {
                             />
                         </Head>
 
-                        <Component imageModal={imageModal} {...pageProps}/>
+                        <SnackbarProvider
+                            anchorOrigin={{horizontal: 'right', vertical: 'top'}}
+                            maxSnack={3}
+                        >
+                            <Component imageModal={imageModal} {...pageProps}/>
+                        </SnackbarProvider>
+
                         <ImageModal
                             imageModal={imageModal}
                         />
+
                     </Grid>
                 </SessionProvider>
             </ThemeProvider>
         </CacheProvider>
     )
 }
+
+const useStyles = makeStyles()((theme) => ({
+    root: {
+        backgroundColor: 'red'
+    },
+
+}));
 
 export default MyApp

@@ -7,57 +7,55 @@ import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
+import { useSnackbar } from 'notistack';
 
 import PublicLayout from '../../components/Layout/PublicLayout';
 
 const LoginPage = (props) => {
 
     const {classes} = useStyles(props);
+    const router = useRouter();
     const { data: session } = useSession();
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [message, setMessage] = useState('');
+    const { enqueueSnackbar } = useSnackbar();
 
     const handleLogin = async() => {
         console.log(`${username} - ${password}`);
-
-        // const res =  await fetch('/api/auth/signin', {
-        //     method: "POST",
-        //     headers: {
-        //         "Accept": "application/json",
-        //         "Content-Type": "application/json"
-        //     },
-        //     body: JSON.stringify({username, password})
-        // })
-        // .then((t) => {
-        //     return t.json();
-        // });
-        //
-        // const token = res.token;
-        // console.log(res.token)
-        //
-        // if(token){
-        //     const json = jwt.decode(token);
-        //     setMessage(`Welcome ${json.email}`)
-        // }
+        setMessage("");
+        enqueueSnackbar('I love snacks.', { autoHideDuration: 3000, variant: "success" });
 
         try {
             const res =  await signIn("credentials", {
-                //message: JSON.stringify({email, password}),
                 username: username,
                 password: password,
                 redirect: false,
             }).then((res) => {
-                console.log("then")
+                console.log(res)
                 return res;
             });
 
-            console.log("finished")
+            console.log(res);
+            if (res.ok) {
+                console.log("session");
+                router.push("/admin");
+            }
+            else{
+                switch (res.status) {
+                    case 401:
+                    setMessage(`Sorry, username or password are inncorrect`)
+                }
+            }
         } catch (error) {
-            window.alert(error)
+            //window.alert(error)
         }
 
-        console.log("executed")
+        //console.log()
+        //const json = jwt.decode(res);
+        //     setMessage(`Welcome ${json.email}`)
+        //console.log(res);
+
     }
 
     const handleLogout = async() => {

@@ -36,26 +36,20 @@ export const authOptions = {
                     },
                     body: JSON.stringify({username, password})
                 })
-                .then((t) => {
-                    console.log('auth then')
-                    return t.json();
+                .then((response) => {
+                    console.log("next auth response")
+                    //console.log(response);
+                    //console.log(response.json());
+                    return response.json();
                 });
 
-                console.log(res);
-
-                console.log(`/api/login`);
-                //const user = await res.json();
-                const user = {
-                    username: "admin",
-                    password: "password"
-                }
-
-                console.log(user);
+                //console.log(res);
 
                 // If no error and we have user data, return it
-                //if (res.ok && user) {
-                if (user) {
-                  return user
+                if (res.token) {
+                    console.log("---return")
+                    console.log(res)
+                  return res
                 }
                 // Return null if user data could not be retrieved
                 return null
