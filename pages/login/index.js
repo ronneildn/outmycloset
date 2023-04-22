@@ -10,6 +10,7 @@ import Head from 'next/head';
 import { useSnackbar } from 'notistack';
 
 import PublicLayout from '../../components/Layout/PublicLayout';
+import Ribbon from '../../components/Presentation/Ribbon';
 
 const LoginPage = (props) => {
 
@@ -18,44 +19,71 @@ const LoginPage = (props) => {
     const { data: session } = useSession();
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [usernameError, setUsernameError] = useState(false);
+    const [passwordError, setPasswordError] = useState(false);
+    const [authError, setAuthError] = useState(false);
     const [message, setMessage] = useState('');
     const { enqueueSnackbar } = useSnackbar();
+
+    const setUsernameHandler = (value) => {
+        setUsernameError(false);
+        setUsername(value);
+    }
+
+    const setPasswordHandler = (value) => {
+        setPasswordError(false);
+        setPassword(value);
+    }
 
     const handleLogin = async() => {
         console.log(`${username} - ${password}`);
         setMessage("");
-        enqueueSnackbar('I love snacks.', { autoHideDuration: 3000, variant: "success" });
 
-        try {
-            const res =  await signIn("credentials", {
-                username: username,
-                password: password,
-                redirect: false,
-            }).then((res) => {
-                console.log(res)
-                return res;
-            });
+        if(validator()){
+            try {
+                const res =  await signIn("credentials", {
+                    username: username,
+                    password: password,
+                    redirect: false,
+                }).then((res) => {
+                    console.log(res)
+                    return res;
+                });
 
-            console.log(res);
-            if (res.ok) {
-                console.log("session");
-                router.push("/admin");
-            }
-            else{
-                switch (res.status) {
-                    case 401:
-                    setMessage(`Sorry, username or password are inncorrect`)
+                console.log(res);
+                if (res.ok) {
+                    enqueueSnackbar('Welcome', { autoHideDuration: 3000, variant: "success" });
+                    router.push("/admin");
                 }
+                else{
+                    switch (res.status) {
+                        case 401:
+                            setMessage('Username or Password incorrect');
+                            break;
+                        default:
+                            setMessage('Sorry an error occured');
+                            break;
+                    }
+                    console.log(message)
+                    enqueueSnackbar(message, { autoHideDuration: 3000, variant: "error" });
+                }
+            } catch (error) {
+                //window.alert(error)
             }
-        } catch (error) {
-            //window.alert(error)
+        }
+    }
+
+    const validator = () => {
+
+        if(!username || !password) {
+            if(!username)setUsernameError(true);
+            if(!password)setPasswordError(true);
+            setMessage('Enter credentials');
+
+            return false;
         }
 
-        //console.log()
-        //const json = jwt.decode(res);
-        //     setMessage(`Welcome ${json.email}`)
-        //console.log(res);
-
+        return true;
     }
 
     const handleLogout = async() => {
@@ -74,10 +102,12 @@ const LoginPage = (props) => {
                     <div className={classes.formContainer}>
                         <h1>Login</h1>
 
-                        <div>
-                            {message}
-                        </div>
-
+                        {message &&
+                            <Ribbon status={"error"}>
+                                {message}
+                            </Ribbon>
+                        }
+                        
                         {
                             session?
                             <div>
@@ -92,11 +122,15 @@ const LoginPage = (props) => {
                                             <TextField
                                                 id="Email"
                                                 label="Email"
+                                                type="text"
                                                 variant="outlined"
                                                 placeholder="Type email address"
                                                 size="small"
-                                                onChange={e => setUsername(e.target.value)}
+                                                onChange={e => setUsernameHandler(e.target.value)}
                                                 fullWidth
+                                                required
+                                                //error={error.authError || error.emailError}
+                                                error={authError || usernameError}
                                             />
                                         </Grid>
                                         <Grid item xs={12}>
@@ -106,10 +140,12 @@ const LoginPage = (props) => {
                                                 type="password"
                                                 name="password"
                                                 placeholder="Type password"
-                                                onChange={e => setPassword(e.target.value)}
+                                                onChange={e => setPasswordHandler(e.target.value)}
                                                 variant="outlined"
                                                 size="small"
                                                 fullWidth
+                                                required
+                                                error={authError || passwordError}
                                             />
                                         </Grid>
                                     </Grid>
