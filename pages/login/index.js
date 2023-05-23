@@ -35,8 +35,8 @@ const LoginPage = (props) => {
         setPassword(value);
     }
 
-    const handleLogin = async() => {
-        console.log(`${username} - ${password}`);
+    const handleLogin = async(e) => {
+        e.preventDefault();
         setMessage("");
 
         if(validator()){
@@ -56,19 +56,14 @@ const LoginPage = (props) => {
                     router.push("/admin");
                 }
                 else{
-                    switch (res.status) {
-                        case 401:
-                            setMessage('Username or Password incorrect');
-                            break;
-                        default:
-                            setMessage('Sorry an error occured');
-                            break;
-                    }
+                    if (res.status === 401) setMessage('Username or Password incorrect');
+                    else setMessage('Sorry an error occured');
+
                     console.log(message)
                     enqueueSnackbar(message, { autoHideDuration: 3000, variant: "error" });
                 }
             } catch (error) {
-                //window.alert(error)
+                enqueueSnackbar('Sorry an error occured', { autoHideDuration: 3000, variant: "error" });
             }
         }
     }
@@ -107,7 +102,7 @@ const LoginPage = (props) => {
                                 {message}
                             </Ribbon>
                         }
-                        
+
                         {
                             session?
                             <div>
@@ -115,7 +110,7 @@ const LoginPage = (props) => {
                                 <Button variant="contained"  fullWidth onClick={handleLogout}>Log out</Button>
                             </div>
                             :
-                            <form>
+                            <form onSubmit={handleLogin}>
                                 <div className={classes.gridContainer}>
                                     <Grid container spacing={3} alignItems="center" className={classes.grid}>
                                         <Grid item xs={12}>
@@ -150,7 +145,7 @@ const LoginPage = (props) => {
                                         </Grid>
                                     </Grid>
                                 </div>
-                                <Button variant="contained"  fullWidth onClick={handleLogin}>Log in</Button>
+                                <Button variant="contained" type="submit" fullWidth onSubmit={handleLogin}>Log in</Button>
                             </form>
                         }
 

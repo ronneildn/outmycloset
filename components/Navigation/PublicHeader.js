@@ -11,6 +11,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Button from '@mui/material/Button';
 import Drawer from '@mui/material/Drawer';
+import { useSession, signOut } from "next-auth/react";
 import { makeStyles } from 'tss-react/mui';
 import { useTheme } from '@mui/material/styles';
 import classNames from "classnames";
@@ -23,6 +24,7 @@ const PublicHeader = (props) => {
     const theme = useTheme();
     const drawerWidth = 240;
     const [mobileOpen, setMobileOpen] = useState(false);
+    const { data: session } = useSession();
     //const container = window !== undefined ? () => window().document.body : undefined;
 
     const handleDrawerToggle = () => {

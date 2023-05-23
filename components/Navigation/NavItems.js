@@ -2,10 +2,14 @@ import {Fragment} from 'react';
 import { makeStyles } from 'tss-react/mui';
 import classNames from "classnames";
 import Link from 'next/link';
+import { useSession, signOut } from "next-auth/react";
+import { useSnackbar } from 'notistack';
 
 const NavItems = (props) => {
 
     const {classes} = useStyles(props);
+    const { data: session } = useSession();
+    const { enqueueSnackbar } = useSnackbar();
 
     let navItems;
     switch (props.layout) {
@@ -14,6 +18,11 @@ const NavItems = (props) => {
         break;
     default:
         navItems = publicItems;
+    }
+
+    const handleLogout = async() => {
+        signOut();
+        enqueueSnackbar('Logged out', { autoHideDuration: 3000, variant: "success" });
     }
 
 
@@ -33,6 +42,12 @@ const NavItems = (props) => {
                             </a>
                         </Link>
                     ))
+                }
+                {
+                    session &&
+                    <a className={classes.navItem} onClick={handleLogout}>
+                        Logout
+                    </a>
                 }
             </div>
         </Fragment>

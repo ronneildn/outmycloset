@@ -47,8 +47,6 @@ export const authOptions = {
 
                 // If no error and we have user data, return it
                 if (res.token) {
-                    console.log("---return")
-                    console.log(res)
                   return res
                 }
                 // Return null if user data could not be retrieved
