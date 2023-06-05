@@ -1,4 +1,4 @@
-import {Fragment, useState} from 'react';
+import {Fragment, useState, useEffect} from 'react';
 import { makeStyles } from 'tss-react/mui';
 import classNames from "classnames";
 import Grid from '@mui/material/Grid';
@@ -10,15 +10,44 @@ import FilterAltOffRoundedIcon from '@mui/icons-material/FilterAltOffRounded';
 
 import Update from './Update';
 
+import updatesService from '../../services/updatesService';
+
 const UpdateList = (props) => {
 
     const {classes} = useStyles(props);
     const [moreFilters, setMoreFilters] = useState(false);
-    const updates = UPDATESDATA;
+    const [updates, setUpdates] = useState([]);
+    const [processingUpdates, setProcessingUpdates] = useState(true);
+
+    useEffect(() => {
+        if (processingUpdates) {
+            getDonations();
+        }
+    },[processingUpdates])
+
+    const getDonationsHandler =  () => {
+        setProcessingUpdates(true);
+    }
 
     const handleFilterToggle = () => {
         setMoreFilters(!moreFilters);
     }
+
+    const getDonations = async () => {
+        await updatesService.getUpdates
+        .then(function(res){
+            console.log(res);
+            setUpdates(res);
+        },
+        function(error){
+            enqueueSnackbar('Sorry an error occured getting updates', { autoHideDuration: 3000, variant: "error" });
+        })
+        .finally(function(){
+            setProcessingUpdates(false);
+        });
+    }
+
+    getDonations();
 
     return (
         <Fragment>
@@ -106,6 +135,7 @@ const useStyles = makeStyles()((theme) => ({
         margin: "20px 0"
     }
 }));
+
 
 export default UpdateList;
 
