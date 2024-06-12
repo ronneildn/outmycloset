@@ -2,15 +2,18 @@ const updatesService = {};
 const basePath = 'http://localhost:3000';
 
 
-updatesService.getUpdates = new Promise(async function(resolve, reject) {
-    const res = await fetch(basePath + '/api/updates');
-    const { data } = await res.json();
+updatesService.getUpdates = (query) => {
+    console.log(query)
+    return new Promise(async function(resolve, reject) {
+        const res = await fetch(`${basePath}/api/updates?${query}`);
+        const { data } = await res.json();
 
-    if(data && Array.isArray(data)) {
-        resolve(data);
-    }
-    else reject("error retrieving donations")
-});
+        if(data && Array.isArray(data)) {
+            resolve(data);
+        }
+        else reject("error retrieving donations")
+    })
+};
 
 // updatesService.updateDonations = (donations) => {
 //     return new Promise(async function(resolve, reject) {

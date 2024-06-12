@@ -17,24 +17,25 @@ const UpdateList = (props) => {
     const {classes} = useStyles(props);
     const [moreFilters, setMoreFilters] = useState(false);
     const [updates, setUpdates] = useState([]);
-    const [processingUpdates, setProcessingUpdates] = useState(true);
+    //const [processingUpdates, setProcessingUpdates] = useState(true);
 
-    useEffect(() => {
-        if (processingUpdates) {
-            getDonations();
-        }
-    },[processingUpdates])
+    // useEffect(() => {
+    //     if (processingUpdates) {
+    //         getUpdates();
+    //     }
+    // },[processingUpdates])
 
-    const getDonationsHandler =  () => {
-        setProcessingUpdates(true);
-    }
+    // const getDonationsHandler =  () => {
+    //     setProcessingUpdates(true);
+    // }
 
     const handleFilterToggle = () => {
         setMoreFilters(!moreFilters);
     }
 
-    const getDonations = async () => {
-        await updatesService.getUpdates
+    const getUpdates = async () => {
+        const query = {page:2}
+        const resp = await updatesService.getUpdates(query)
         .then(function(res){
             console.log(res);
             setUpdates(res);
@@ -43,11 +44,13 @@ const UpdateList = (props) => {
             enqueueSnackbar('Sorry an error occured getting updates', { autoHideDuration: 3000, variant: "error" });
         })
         .finally(function(){
-            setProcessingUpdates(false);
+            //setProcessingUpdates(false);
         });
+
+        console.log(resp)
     }
 
-    getDonations();
+    //getUpdates();
 
     return (
         <Fragment>

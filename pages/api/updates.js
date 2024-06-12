@@ -9,6 +9,17 @@ export default async (req, res) => {
 
     switch (method) {
         case 'GET':
+            const queryWithPagination = req.query || {};
+            const {
+                page = 1,
+                limit = 30,
+                ...query
+            } = queryWithPagination;
+
+            const skip = page ? (page - 1) * 30 : 0;
+            if (query.name) query.name = { $regex: new RegExp(query.name), $options: 'i' };
+            console.log(query);
+
             try {
                 const updates = await Update.find({});
 
