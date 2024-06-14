@@ -1,10 +1,9 @@
 "use client";
 import { Inter } from "next/font/google";
-// import "./styles/reset.css";
-// import "./styles/globals.css";
-// import "./styles/animation.css";
-// import "./styles/odometer.css";
-import "./styles/globals.css";
+import "../styles/reset.css";
+import "../styles/globals.css";
+import "../styles/animation.css";
+import "../styles/odometer.css";
 import { NextAppDirEmotionCacheProvider } from "tss-react/next/appDir";
 import { TssCacheProvider } from "tss-react";
 import { ThemeProvider } from "@mui/material/styles";
