@@ -64,6 +64,8 @@ const HeroComponent = (props) => {
                     </Grid>
                 </div>
 
+                <SocialComponent />
+
                 <div className={classes.footer}>
                     <ArrowDown className={classes.down} />
                 </div>

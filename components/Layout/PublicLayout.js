@@ -29,7 +29,9 @@ const PublicLayout = (props) => {
                 <PublicHeader scrollOffset={offset} />
             </header>
             <main className={classes.main}>{props.children}</main>
-            <footer></footer>
+            <footer>
+                <PublicFooter />
+            </footer>
         </div>
     );
 };

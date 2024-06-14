@@ -76,16 +76,32 @@ const SocialComponent = (props) => {
         },
     ];
 
+    const renderPlatforms = () => {
+        platforms.map((item, index) => {
+            return (
+                <Link href={item.url} key={item.name} key={index}>
+                    <span className={classes.platform} target="_blank">
+                        {item.icon}
+                    </span>
+                </Link>
+            );
+        });
+    };
+
+    const platformItem = (item, index) => {
+        return (
+            <Link href={item.url} key={item.name} key={index}>
+                <span className={classes.platform} target="_blank">
+                    {item.icon}
+                </span>
+            </Link>
+        );
+    };
+
     return (
         <div className={classes.root}>
             {platforms.map((item, index) => {
-                return (
-                    <Link href={item.url} key={item.name}>
-                        <span className={classes.platform} target="_blank">
-                            {item.icon}
-                        </span>
-                    </Link>
-                );
+                return platformItem;
             })}
         </div>
     );

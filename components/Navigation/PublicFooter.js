@@ -1,51 +1,49 @@
-import {Fragment} from 'react';
-import { makeStyles } from 'tss-react/mui';
+import { Fragment } from "react";
+import { makeStyles } from "tss-react/mui";
 import classNames from "classnames";
-import Link from 'next/link';
-import Image from 'next/image';
-import Grid from '@mui/material/Grid';
+import Link from "next/link";
+import Image from "next/image";
+import Grid from "@mui/material/Grid";
 
-import SocialComponent from '../Social/SocialComponent';
+import SocialComponent from "../Social/SocialComponent";
 
 const PublicFooter = (props) => {
-
-    const {classes} = useStyles(props);
+    const { classes } = useStyles(props);
 
     const sitemap = [
         {
             url: "",
-            label: "Home"
+            label: "Home",
         },
         {
             url: "/about",
-            label: "About Us"
+            label: "About Us",
         },
         {
             url: "",
-            label: "Services"
+            label: "Services",
         },
         {
             url: "",
-            label: "Campaigns"
+            label: "Campaigns",
         },
         {
             url: "",
-            label: "News"
+            label: "News",
         },
         {
             url: "",
-            label: "Donate"
+            label: "Donate",
         },
         {
             url: "",
-            label: "Contact Us"
-        }
+            label: "Contact Us",
+        },
     ];
 
     return (
         <div className={classes.root}>
             <div className={classes.margin}>
-
                 <div className={classes.logo}>
                     <Link href="/">
                         <Image
@@ -59,35 +57,28 @@ const PublicFooter = (props) => {
 
                 <div className={classes.sitemapContainer}>
                     <ul>
-                        {
-                            sitemap.map((item, index)=> {
-                                return(
-                                    <li key={index}>
-                                        <Link href={item.url}>
-                                            <a>{item.label}</a>
-                                        </Link>
-                                    </li>
-                                )
-                            })
-                        }
-
+                        {sitemap.map((item, index) => {
+                            return (
+                                <li key={index}>
+                                    <Link href={item.url}>{item.label}</Link>
+                                </li>
+                            );
+                        })}
                     </ul>
                 </div>
 
                 <div className={classes.socialContainer}>
-                    <div className={classes.label}>
-                        Connect with us on:
-                    </div>
+                    <div className={classes.label}>Connect with us on:</div>
                     <SocialComponent size={15} />
                 </div>
 
                 <div>
+                    <div>Founder & President: Michael Narain New York, NY</div>
                     <div>
-                        Founder & President: Michael Narain
-                        New York, NY
-                    </div>
-                    <div>
-                        Email: <a href="mailto:info@outmycloset.org" target="_blank">info@outmycloset.org</a>
+                        Email:{" "}
+                        <a href="mailto:info@outmycloset.org" target="_blank">
+                            info@outmycloset.org
+                        </a>
                     </div>
                     <div>Copyright © 2022 Out My Closet</div>
                 </div>
@@ -106,13 +97,13 @@ const useStyles = makeStyles()((theme) => ({
         flexDirection: "column",
         alignItems: "center",
 
-        "a": {
+        a: {
             color: theme.palette.secondary.foregroundTint,
 
-            ":hover" : {
+            ":hover": {
                 color: theme.palette.secondary.foreground,
-            }
-        }
+            },
+        },
     },
     margin: {
         width: "100%",
@@ -122,39 +113,34 @@ const useStyles = makeStyles()((theme) => ({
         flexDirection: "column",
         alignItems: "center",
 
-        [theme.breakpoints.down('md')]: {
+        [theme.breakpoints.down("md")]: {},
 
-        },
-
-        [theme.breakpoints.down('sm')]: {
-
-        }
+        [theme.breakpoints.down("sm")]: {},
     },
     label: {
         color: theme.palette.secondary.foreground,
         fontSize: 15,
         fontWeight: 700,
-        marginBottom: 10
+        marginBottom: 10,
     },
     logo: {
-        cursor: "pointer"
+        cursor: "pointer",
     },
     sitemapContainer: {
         marginBottom: 20,
 
-        "ul": {
-            textAlign: "center"
+        ul: {
+            textAlign: "center",
         },
 
-        "li": {
+        li: {
             display: "inline-block",
-            padding: "5px 10px"
-        }
+            padding: "5px 10px",
+        },
     },
     socialContainer: {
-        marginBottom: 10
-    }
-
+        marginBottom: 10,
+    },
 }));
 
 export default PublicFooter;

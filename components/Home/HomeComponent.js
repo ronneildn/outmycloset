@@ -4,6 +4,8 @@ import { makeStyles } from "tss-react/mui";
 
 import Hero from "./Hero";
 import ServicesSection from "./ServicesSection";
+import UpdatesSection from "./UpdatesSection";
+import MerchSection from "./MerchSection";
 
 const HomeComponent = (props) => {
     const { classes } = useStyles();
@@ -17,6 +19,8 @@ const HomeComponent = (props) => {
 
                 <div className={classes.homeContentContainer}>
                     <ServicesSection />
+                    <UpdatesSection />
+                    <MerchSection />
                 </div>
             </div>
         </Fragment>
