@@ -34,7 +34,17 @@ const NavItems = (props) => {
                         ? classes.header
                         : classes.drawer
                 )}
-            ></div>
+            >
+                {navItems.map((item, index) => (
+                    <Link
+                        key={index}
+                        href={item.url}
+                        className={classes.navItem}
+                    >
+                        {item.name}
+                    </Link>
+                ))}
+            </div>
         </Fragment>
     );
 };

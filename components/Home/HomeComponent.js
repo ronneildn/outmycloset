@@ -3,6 +3,7 @@ import { Fragment } from "react";
 import { makeStyles } from "tss-react/mui";
 
 import Hero from "./Hero";
+import ServicesSection from "./ServicesSection";
 
 const HomeComponent = (props) => {
     const { classes } = useStyles();
@@ -14,7 +15,9 @@ const HomeComponent = (props) => {
                     <Hero />
                 </section>
 
-                <div className={classes.homeContentContainer}></div>
+                <div className={classes.homeContentContainer}>
+                    <ServicesSection />
+                </div>
             </div>
         </Fragment>
     );
@@ -24,7 +27,7 @@ const useStyles = makeStyles()((theme) => ({
     root: {
         // backgroundColor: theme.palette.secondary.background,
         // color: theme.palette.secondary.foreground,
-        overflow: "auto",
+        //overflow: "auto",
 
         h2: {
             fontSize: 30,
