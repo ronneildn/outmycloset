@@ -13,10 +13,11 @@ import LinkedIn from "../../public/svg/linkedin.svg";
 
 const SocialComponent = (props) => {
     const { classes } = useStyles(props);
+
     const platforms = [
         {
             name: "instagram",
-            icon: (
+            icon: () => (
                 <Instagram
                     className={classes.icon}
                     style={{ width: props.size ? props.size : 20 }}
@@ -26,7 +27,7 @@ const SocialComponent = (props) => {
         },
         {
             name: "facebook",
-            icon: (
+            icon: () => (
                 <Facebook
                     className={classes.icon}
                     style={{ width: props.size ? props.size : 20 }}
@@ -36,7 +37,7 @@ const SocialComponent = (props) => {
         },
         {
             name: "twitter",
-            icon: (
+            icon: () => (
                 <Twitter
                     className={classes.icon}
                     style={{ width: props.size ? props.size : 20 }}
@@ -46,7 +47,7 @@ const SocialComponent = (props) => {
         },
         {
             name: "tumblr",
-            icon: (
+            icon: () => (
                 <Tumblr
                     className={classes.icon}
                     style={{ width: props.size ? props.size : 20 }}
@@ -56,7 +57,7 @@ const SocialComponent = (props) => {
         },
         {
             name: "youtube",
-            icon: (
+            icon: () => (
                 <Youtube
                     className={classes.icon}
                     style={{ width: props.size ? props.size : 20 }}
@@ -66,7 +67,7 @@ const SocialComponent = (props) => {
         },
         {
             name: "linkedIn",
-            icon: (
+            icon: () => (
                 <LinkedIn
                     className={classes.icon}
                     style={{ width: props.size ? props.size : 20 }}
@@ -76,13 +77,20 @@ const SocialComponent = (props) => {
         },
     ];
 
-    const renderPlatforms = () => {
-        platforms.map((item, index) => {
-            return <div key={index}>platform</div>;
-        });
-    };
-
-    return <div className={classes.root}>{renderPlatforms}</div>;
+    return (
+        <div className={classes.root}>
+            {platforms.map((item, index) => (
+                <Link
+                    className={classes.platform}
+                    href={item.url}
+                    key={index}
+                    target="_blank"
+                >
+                    {item.icon()}
+                </Link>
+            ))}
+        </div>
+    );
 };
 
 const useStyles = makeStyles()((theme) => ({
