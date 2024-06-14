@@ -76,23 +76,13 @@ const SocialComponent = (props) => {
         },
     ];
 
-    const platformItem = (item, index) => {
-        return (
-            <Link href={item.url} key={item.name} key={index}>
-                <span className={classes.platform} target="_blank">
-                    {item.icon}
-                </span>
-            </Link>
-        );
+    const renderPlatforms = () => {
+        platforms.map((item, index) => {
+            return <div key={index}>platform</div>;
+        });
     };
 
-    return (
-        <div className={classes.root}>
-            {platforms.map((item, index) => {
-                return platformItem;
-            })}
-        </div>
-    );
+    return <div className={classes.root}>{renderPlatforms}</div>;
 };
 
 const useStyles = makeStyles()((theme) => ({
