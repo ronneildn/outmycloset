@@ -145,7 +145,7 @@ const UpdateList = (props) => {
 
             <div className={classes.listContainer}>
                 {updates.map((item, index) => (
-                    <div className={classes.updateContainer}>
+                    <div className={classes.updateContainer} key={index}>
                         <Update data={item.attributes} />
                     </div>
                 ))}
