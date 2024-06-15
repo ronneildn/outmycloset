@@ -20,11 +20,29 @@ const UpdateList = (props) => {
 
     const [processingUpdates, setProcessingUpdates] = useState(true);
 
+    // useEffect(() => {
+    //     if (processingUpdates) {
+    //         getUpdates();
+    //     }
+    // }, [processingUpdates]);
+
+    const { loading, error, data } = useFetch(
+        "https://phenomenal-smile-1efcf2c825.strapiapp.com/api/blogs/?populate=*"
+    );
+
     useEffect(() => {
-        if (processingUpdates) {
-            getUpdates();
+        if (data) {
+            console.log(data);
+            setUpdates(data.data);
+            console.log(updates);
         }
-    }, [processingUpdates]);
+    }, [data]);
+
+    // if (data) {
+    //     console.log(data);
+    //     setUpdates(data.data);
+    //     console.log(updates);
+    // }
 
     // const getDonationsHandler =  () => {
     //     setProcessingUpdates(true);
@@ -53,21 +71,18 @@ const UpdateList = (props) => {
         //     .finally(function () {
         //         setProcessingUpdates(false);
         //     });
-
         // console.log(resp);
-
-        const { loading, error, data } = await useFetch(
-            "https://phenomenal-smile-1efcf2c825.strapiapp.com/api/blogs/?populate=*"
-        );
-
-        if (data) {
-            console.log(data);
-            setUpdates(data.data);
-        }
+        // const { loading, error, data } = await useFetch(
+        //     "https://phenomenal-smile-1efcf2c825.strapiapp.com/api/blogs/?populate=*"
+        // );
+        // if (data) {
+        //     console.log(data);
+        //     setUpdates(data.data);
+        // }
     };
 
     //setProcessingUpdates(true);
-    getUpdates();
+    //getUpdates();
 
     return (
         <Fragment>
