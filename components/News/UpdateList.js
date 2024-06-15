@@ -36,7 +36,7 @@ const UpdateList = (props) => {
             setUpdates(data.data);
             console.log(updates);
         }
-    }, [data]);
+    }, [data, updates]);
 
     // if (data) {
     //     console.log(data);
