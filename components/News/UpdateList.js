@@ -7,82 +7,37 @@ import InputAdornment from "@mui/material/InputAdornment";
 import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
 import FilterAltRoundedIcon from "@mui/icons-material/FilterAltRounded";
 import FilterAltOffRoundedIcon from "@mui/icons-material/FilterAltOffRounded";
+import { useSnackbar } from "notistack";
 
 import Update from "./Update";
-
-//import updatesService from "@/services/updatesService";
 import useFetch from "@/hooks/useFetch";
 
 const UpdateList = (props) => {
     const { classes } = useStyles(props);
     const [moreFilters, setMoreFilters] = useState(false);
     const [updates, setUpdates] = useState([]);
-
     const [processingUpdates, setProcessingUpdates] = useState(true);
+    const { enqueueSnackbar } = useSnackbar();
 
-    // useEffect(() => {
-    //     if (processingUpdates) {
-    //         getUpdates();
-    //     }
-    // }, [processingUpdates]);
-
-    const { loading, error, data } = useFetch(
-        "https://phenomenal-smile-1efcf2c825.strapiapp.com/api/blogs/?populate=*"
-    );
+    const { loading, error, data } = useFetch("blogs/?populate=*");
 
     useEffect(() => {
-        if (data) {
+        if (data?.error) {
+            console.log("error");
+            enqueueSnackbar("Sorry an error occured getting updates", {
+                autoHideDuration: 3000,
+                variant: "error",
+            });
+        } else if (data?.data) {
             console.log(data);
             setUpdates(data.data);
             console.log(updates);
         }
     }, [data, updates]);
 
-    // if (data) {
-    //     console.log(data);
-    //     setUpdates(data.data);
-    //     console.log(updates);
-    // }
-
-    // const getDonationsHandler =  () => {
-    //     setProcessingUpdates(true);
-    // }
-
     const handleFilterToggle = () => {
         setMoreFilters(!moreFilters);
     };
-
-    const getUpdates = async () => {
-        // const query = { page: 1 };
-        // const resp = await updatesService
-        //     .getUpdates(query)
-        //     .then(
-        //         function (res) {
-        //             console.log(res);
-        //             setUpdates(UPDATESDATA);
-        //         },
-        //         function (error) {
-        //             enqueueSnackbar("Sorry an error occured getting updates", {
-        //                 autoHideDuration: 3000,
-        //                 variant: "error",
-        //             });
-        //         }
-        //     )
-        //     .finally(function () {
-        //         setProcessingUpdates(false);
-        //     });
-        // console.log(resp);
-        // const { loading, error, data } = await useFetch(
-        //     "https://phenomenal-smile-1efcf2c825.strapiapp.com/api/blogs/?populate=*"
-        // );
-        // if (data) {
-        //     console.log(data);
-        //     setUpdates(data.data);
-        // }
-    };
-
-    //setProcessingUpdates(true);
-    //getUpdates();
 
     return (
         <Fragment>
@@ -144,7 +99,7 @@ const UpdateList = (props) => {
             </div>
 
             <div className={classes.listContainer}>
-                {updates.map((item, index) => (
+                {updates?.map((item, index) => (
                     <div className={classes.updateContainer} key={index}>
                         <Update data={item.attributes} />
                     </div>

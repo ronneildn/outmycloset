@@ -7,6 +7,7 @@ import "../styles/odometer.css";
 import { NextAppDirEmotionCacheProvider } from "tss-react/next/appDir";
 import { TssCacheProvider } from "tss-react";
 import { ThemeProvider } from "@mui/material/styles";
+import { SnackbarProvider, useSnackbar, closeSnackbar } from "notistack";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,7 +23,15 @@ export default function RootLayout({ children }) {
                             options={{ key: "tss" }}
                             CacheProvider={TssCacheProvider}
                         >
-                            {children}
+                            <SnackbarProvider
+                                anchorOrigin={{
+                                    horizontal: "right",
+                                    vertical: "top",
+                                }}
+                                maxSnack={3}
+                            >
+                                {children}
+                            </SnackbarProvider>
                         </NextAppDirEmotionCacheProvider>
                     </ThemeProvider>
                 </NextAppDirEmotionCacheProvider>

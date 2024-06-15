@@ -1,11 +1,10 @@
-import {Fragment} from 'react';
-import { makeStyles } from 'tss-react/mui';
+import { Fragment } from "react";
+import { makeStyles } from "tss-react/mui";
 import classNames from "classnames";
-import Image from 'next/image';
+import Image from "next/image";
 
 const UpdateItem = (props) => {
-
-    const {classes} = useStyles(props);
+    const { classes } = useStyles(props);
     const data = props.data;
 
     return (
@@ -14,26 +13,16 @@ const UpdateItem = (props) => {
                 <img
                     className={classes.image}
                     alt="Out My Closet logo"
-                    src={data.imgUrl}
+                    src={data.coverImage.data.attributes.formats.medium.url}
                 />
             </div>
             <div className={classes.container}>
                 <div className={classes.head}>
-                    <h3 className={classes.title}>
-                        {data.title}
-                    </h3>
-                    <div className={classes.subTitle}>
-                        {data.subTitle}
-                    </div>
+                    <h3 className={classes.title}>{data.title}</h3>
+                    <div className={classes.subTitle}>{data.subTitle}</div>
                 </div>
-                <div className={classes.content}>
-                    {data.content}
-                </div>
-                <div
-                    className={classes.link}
-                >
-                    {data.linkLabel}
-                </div>
+                <div className={classes.content}>{data.description}</div>
+                <div className={classes.link}>{data.linkLabel}</div>
             </div>
         </a>
     );
@@ -46,11 +35,9 @@ const useStyles = makeStyles()((theme) => ({
         flexDirection: "column",
         flex: "1 1 0%",
     },
-    imageContainer: {
-
-    },
+    imageContainer: {},
     image: {
-        width: "100%"
+        width: "100%",
     },
     container: {
         display: "flex",
@@ -58,7 +45,7 @@ const useStyles = makeStyles()((theme) => ({
         flex: "1 1 0%",
     },
     head: {
-        marginBottom: 20
+        marginBottom: 20,
     },
     title: {
         fontSize: 25,
@@ -76,7 +63,7 @@ const useStyles = makeStyles()((theme) => ({
         fontWeight: 300,
         lineHeight: 1.5,
         flex: "1 1 0%",
-        marginBottom: 10
+        marginBottom: 10,
     },
     link: {
         fontSize: 14,
@@ -87,11 +74,10 @@ const useStyles = makeStyles()((theme) => ({
         justifyContent: "end",
         color: theme.palette.primary.main,
 
-        ":hover" : {
+        ":hover": {
             color: theme.palette.primary.dark,
-        }
-    }
-
+        },
+    },
 }));
 
 export default UpdateItem;
