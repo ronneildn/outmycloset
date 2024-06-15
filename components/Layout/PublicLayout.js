@@ -1,3 +1,4 @@
+"use client";
 import { makeStyles } from "tss-react/mui";
 import { useState, useEffect, useCallback } from "react";
 import PublicHeader from "../Navigation/PublicHeader";
