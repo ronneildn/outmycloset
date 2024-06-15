@@ -1,20 +1,16 @@
-import {Fragment} from 'react';
-import { makeStyles } from 'tss-react/mui';
+import { Fragment } from "react";
+import { makeStyles } from "tss-react/mui";
 import classNames from "classnames";
 
-import Odometer from '../Presentation/Odometer'
+//import Odometer from "../Presentation/Odometer";
 
 const Donation = (props) => {
-
-    const {classes} = useStyles(props);
+    const { classes } = useStyles(props);
     const donatedItems = 34388;
 
     return (
         <Fragment>
             <div className={classes.root}>
-                <Odometer
-                    value={donatedItems}
-                />
                 <div className={classes.label}>Donated Items</div>
             </div>
         </Fragment>
@@ -32,7 +28,7 @@ const useStyles = makeStyles()((theme) => ({
             backgroundColor: theme.palette.primary.accent2,
             color: theme.palette.secondary.background,
             borderRadius: 5,
-            padding: 5
+            padding: 5,
         },
 
         ".odometer-digit": {
@@ -47,17 +43,17 @@ const useStyles = makeStyles()((theme) => ({
             display: "flex",
         },
 
-        [theme.breakpoints.down('md')]: {
+        [theme.breakpoints.down("md")]: {
             ".odometer-digit": {
                 fontSize: 40,
-            }
+            },
         },
     },
     label: {
         fontSize: 16,
         fontWeight: 700,
         textTransform: "uppercase",
-    }
+    },
 }));
 
 export default Donation;
