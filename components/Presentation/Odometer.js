@@ -23,18 +23,20 @@ const OdometerComponent = (props) => {
         );
     }, []);
 
-    return (
-        <Fragment>
-            <div className={classes.root}>
-                <Odometer
-                    value={odometerValue}
-                    format="(,ddd)"
-                    duration={props.duration ? props.duration : 5000}
-                    theme={props.theme}
-                />
-            </div>
-        </Fragment>
-    );
+    if (typeof window !== `undefined`) {
+        return (
+            <Fragment>
+                <div className={classes.root}>
+                    <Odometer
+                        value={odometerValue}
+                        format="(,ddd)"
+                        duration={props.duration ? props.duration : 5000}
+                        theme={props.theme}
+                    />
+                </div>
+            </Fragment>
+        );
+    }
 };
 
 const useStyles = makeStyles()((theme) => ({
