@@ -1,8 +1,9 @@
+"use client";
 import { Fragment, useState, useEffect } from "react";
 import { makeStyles } from "tss-react/mui";
 import classNames from "classnames";
 import dynamic from "next/dynamic";
-//import Odometer from "react-odometerjs";
+import Odometer from "react-odometerjs";
 
 // const Odometer = dynamic(import("react-odometerjs"), {
 //     ssr: false,
@@ -25,12 +26,12 @@ const OdometerComponent = (props) => {
     return (
         <Fragment>
             <div className={classes.root}>
-                {/* <Odometer
+                <Odometer
                     value={odometerValue}
                     format="(,ddd)"
                     duration={props.duration ? props.duration : 5000}
                     theme={props.theme}
-                /> */}
+                />
             </div>
         </Fragment>
     );
