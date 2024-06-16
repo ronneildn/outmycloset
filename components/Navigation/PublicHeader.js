@@ -121,7 +121,7 @@ const useStyles = makeStyles()((theme) => ({
         },
     },
     navBackgroundTop: {
-        backgroundColor: "transparent",
+        backgroundColor: "transparent !important",
         transition: "all 2s ease 0s",
     },
     navBackgroundScroll: {
