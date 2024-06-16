@@ -12,6 +12,7 @@ const PublicLayout = (props) => {
     const onScroll = useCallback((event) => {
         const { scrollY } = window;
         setOffset(scrollY);
+        console.log(scrollY);
     }, []);
 
     useEffect(() => {

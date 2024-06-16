@@ -2,7 +2,7 @@ import { Fragment } from "react";
 import { makeStyles } from "tss-react/mui";
 import classNames from "classnames";
 
-//import Odometer from "../Presentation/Odometer";
+import Odometer from "../Presentation/Odometer";
 
 const Donation = (props) => {
     const { classes } = useStyles(props);
@@ -11,6 +11,7 @@ const Donation = (props) => {
     return (
         <Fragment>
             <div className={classes.root}>
+                <Odometer value={donatedItems} />
                 <div className={classes.label}>Donated Items</div>
             </div>
         </Fragment>
