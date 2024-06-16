@@ -28,7 +28,7 @@ const OdometerComponent = (props) => {
                 <Odometer
                     value={odometerValue}
                     format="(,ddd)"
-                    duration={props.duration ? ropos.duration : 5000}
+                    duration={props.duration ? props.duration : 5000}
                     theme={props.theme}
                 />
             </div>
