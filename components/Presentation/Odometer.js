@@ -3,25 +3,44 @@ import { Fragment, useState, useEffect } from "react";
 import { makeStyles } from "tss-react/mui";
 import classNames from "classnames";
 import dynamic from "next/dynamic";
-import Odometer from "react-odometerjs";
+//import Odometer from "react-odometerjs";
 
-// const Odometer = dynamic(import("react-odometerjs"), {
-//     ssr: false,
-//     loading: () => 0,
-// });
+let loadedCallback = null;
+let loaded = false;
+
+const Odometer = dynamic(
+    async () => {
+        const mod = await import("react-odometerjs");
+        loaded = true;
+        if (loadedCallback != null) {
+            loadedCallback();
+        }
+        return mod;
+    },
+    {
+        ssr: false,
+        loading: () => 0,
+    }
+);
 
 const OdometerComponent = (props) => {
     const { classes } = useStyles(props);
+    const [odometerLoaded, setOdometerLoaded] = useState(loaded);
     const [odometerValue, setOdometerValue] = useState(0);
 
+    loadedCallback = () => {
+        setOdometerLoaded(true);
+    };
+
     useEffect(() => {
-        setTimeout(
-            () => {
-                setOdometerValue(props.value);
-            },
-            props.time ? props.time : 1000
-        );
-    }, []);
+        if (odometerLoaded) {
+            setOdometerValue(1);
+        }
+    }, [odometerLoaded]);
+
+    useEffect(() => {
+        setOdometerValue(props.value);
+    }, [odometerValue]);
 
     return (
         <Fragment>
