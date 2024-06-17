@@ -40,15 +40,16 @@ const AboutComponent = (props) => {
                             />
                         </div>
                         <p>
-                            Out My Closet's Founder, Michael Narain's life has
-                            been weaved with the passion of two things, the love
-                            of aesthetics and a love of humanity. Michael has
-                            fostered his love for the arts and pursued a degree
-                            at Hunter College attaining a BA in Media
-                            Communications while minoring in Theater. He then
-                            decided to continue his education at the Fashion
-                            Institute of Technology where he concentrated
-                            directly on Integrated Marketing Communications.
+                            Out My Closet&apos;s Founder, Michael Narain&apos;s
+                            life has been weaved with the passion of two things,
+                            the love of aesthetics and a love of humanity.
+                            Michael has fostered his love for the arts and
+                            pursued a degree at Hunter College attaining a BA in
+                            Media Communications while minoring in Theater. He
+                            then decided to continue his education at the
+                            Fashion Institute of Technology where he
+                            concentrated directly on Integrated Marketing
+                            Communications.
                         </p>
                         <p>
                             In 2010 Michael obtained credentialing in the
@@ -69,7 +70,7 @@ const AboutComponent = (props) => {
                         </p>
                         <p>
                             In November of 2013 Michael initiated his own
-                            organization, "Out My Closet," which serves
+                            organization, &quotOut My Closet,&quot which serves
                             displaced and under resourced LGBTQ youth in New
                             York City. Michael uses his gift of creativity to
                             produce uplifting media campaigns that support the
@@ -77,16 +78,16 @@ const AboutComponent = (props) => {
                             empowerment and resilience.
                         </p>
                         <p>
-                            Out My Closet's reach has gone as far as Los Angeles
-                            and internationally to South America. The
+                            Out My Closet&apos;s reach has gone as far as Los
+                            Angeles and internationally to South America. The
                             organization has donated thousands of articles of
                             clothing and continues to touch lives through its
-                            social media campaigns. "Out My Closet is my biggest
-                            accomplishment yet. Uplifting and supporting lives
-                            torn by homophobia and homo-negativism is something
-                            I strongly feel called to do. Each year we will
-                            expand our reach until hope is synonymous with our
-                            name."
+                            social media campaigns. &quotOut My Closet is my
+                            biggest accomplishment yet. Uplifting and supporting
+                            lives torn by homophobia and homo-negativism is
+                            something I strongly feel called to do. Each year we
+                            will expand our reach until hope is synonymous with
+                            our name.&quot
                         </p>
                     </div>
                 </div>
