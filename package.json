@@ -22,7 +22,8 @@
     "react-elastic-carousel": "^0.11.5",
     "react-lines-ellipsis": "^0.15.4",
     "react-odometerjs": "^3.1.3",
-    "tss-react": "^4.9.10"
+    "tss-react": "^4.9.10",
+    "yet-another-react-lightbox": "^3.20.0"
   },
   "devDependencies": {
     "@svgr/webpack": "^6.5.0",
