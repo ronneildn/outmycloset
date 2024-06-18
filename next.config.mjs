@@ -9,6 +9,15 @@ const nextConfig = {
             "www.outmycloset.org",
             "http://www.outmycloset.org",
             "https://www.outmycloset.org",
+            "https://phenomenal-smile-1efcf2c825.media.strapiapp.com",
+        ],
+        remotePatterns: [
+            {
+                protocol: "https",
+                hostname: "phenomenal-smile-1efcf2c825.media.strapiapp.com",
+                port: "",
+                pathname: "/*",
+            },
         ],
     },
     webpack(config) {

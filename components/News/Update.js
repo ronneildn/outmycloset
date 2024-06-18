@@ -45,7 +45,7 @@ const Update = (props) => {
                             />
                         </div>
                         <div className={classes.date}>
-                            {moment(data.data).format("MMM Do YY")}
+                            {moment(data.data).format("MMM Do, YY")}
                         </div>
                     </div>
                 </div>
