@@ -9,12 +9,14 @@ import MerchSection from "./MerchSection";
 
 const HomeComponent = (props) => {
     const { classes } = useStyles();
+    const donatationLink =
+        "https://outmycloset.harnessgiving.org/campaigns/15177";
 
     return (
         <Fragment>
             <div className={classes.root}>
                 <section className={classes.heroContainer}>
-                    <Hero />
+                    <Hero donationLink={donatationLink} />
                 </section>
 
                 <div className={classes.homeContentContainer}>

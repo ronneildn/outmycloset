@@ -13,7 +13,7 @@ const Update = (props) => {
 
     return (
         <div className={classes.root}>
-            <Link href={`/news/${data.id}`}>
+            <Link href={`/news/${data.slug}`}>
                 <div className={classes.innerContainer}>
                     <div className={classes.imageContainer}>
                         <img

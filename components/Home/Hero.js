@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import Link from "next/link";
 import Image from "next/image";
 import { makeStyles } from "tss-react/mui";
 import Button from "@mui/material/Button";
@@ -52,9 +53,11 @@ const HeroComponent = (props) => {
                         spacing={2}
                     >
                         <Grid item>
-                            <Button variant="contained" size="large">
-                                Donate
-                            </Button>
+                            <Link href={props.donationLink}>
+                                <Button variant="contained" size="large">
+                                    Donate
+                                </Button>
+                            </Link>
                         </Grid>
                         <Grid item>
                             <Button variant="contained" size="large">
