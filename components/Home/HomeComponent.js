@@ -6,11 +6,11 @@ import Hero from "./Hero";
 import ServicesSection from "./ServicesSection";
 import UpdatesSection from "./UpdatesSection";
 import MerchSection from "./MerchSection";
+import staticData from "@/constants/data";
 
 const HomeComponent = (props) => {
     const { classes } = useStyles();
-    const donatationLink =
-        "https://outmycloset.harnessgiving.org/campaigns/15177";
+    const donatationLink = staticData.donationsUrl;
 
     return (
         <Fragment>

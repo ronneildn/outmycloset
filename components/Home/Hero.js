@@ -10,6 +10,7 @@ import ArrowDown from "@mui/icons-material/ExpandMoreRounded";
 import Donation from "./Donation";
 import HeroCarousel from "./HeroCarousel";
 import SocialComponent from "../Social/SocialComponent";
+import staticData from "@/constants/data";
 
 const HeroComponent = (props) => {
     const { classes } = useStyles(props);
@@ -42,7 +43,7 @@ const HeroComponent = (props) => {
                     </div>
 
                     <div className={classes.donationContainer}>
-                        <Donation />
+                        <Donation number={staticData.donationsNumber} />
                     </div>
 
                     <Grid

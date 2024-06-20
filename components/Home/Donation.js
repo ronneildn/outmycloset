@@ -6,12 +6,11 @@ import Odometer from "../Presentation/Odometer";
 
 const Donation = (props) => {
     const { classes } = useStyles(props);
-    const donatedItems = 54607;
 
     return (
         <Fragment>
             <div className={classes.root}>
-                <Odometer value={donatedItems} />
+                <Odometer value={props.number} />
                 <div className={classes.label}>Donated Items</div>
             </div>
         </Fragment>
