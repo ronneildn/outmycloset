@@ -92,10 +92,10 @@ const publicItems = [
         name: "News & Media",
         url: "/news",
     },
-    {
-        name: "Get Invloved",
-        url: "/volunteer",
-    },
+    // {
+    //     name: "Get Invloved",
+    //     url: "/volunteer",
+    // },
 ];
 
 const adminItems = [

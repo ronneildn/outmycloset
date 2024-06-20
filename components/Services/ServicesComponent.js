@@ -1,5 +1,6 @@
 "use client";
 import { Fragment } from "react";
+import Link from "next/link";
 import { makeStyles } from "tss-react/mui";
 import classNames from "classnames";
 import Grid from "@mui/material/Grid";
@@ -12,6 +13,7 @@ import EducationIcon from "@mui/icons-material/SchoolRounded";
 
 import PublicContent from "../Layout/PublicContent";
 import SectionHeader from "../Presentation/SectionHeader";
+import staticData from "@/constants/data";
 
 const ServicesComponent = (props) => {
     const { classes } = useStyles(props);
@@ -109,15 +111,17 @@ const ServicesComponent = (props) => {
                     spacing={2}
                 >
                     <Grid item>
-                        <Button variant="contained" size="large">
-                            Donate
-                        </Button>
+                        <Link href={staticData.donationsUrl}>
+                            <Button variant="contained" size="large">
+                                Donate
+                            </Button>
+                        </Link>
                     </Grid>
-                    <Grid item>
+                    {/* <Grid item>
                         <Button variant="contained" size="large">
                             Get Help
                         </Button>
-                    </Grid>
+                    </Grid> */}
                 </Grid>
             </PublicContent>
         </div>
