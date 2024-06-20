@@ -23,7 +23,7 @@ const HeroComponent = (props) => {
                 */}
                 <img
                     className={classes.backgroundImg}
-                    src="/img/hero.png"
+                    src="/img/img_banner.jpg"
                     alt="Out My Closet"
                 />
             </div>
@@ -35,10 +35,10 @@ const HeroComponent = (props) => {
                         <span className={classes.inline}>LGBTQ+ Youth!</span>
                     </h1>
                     <div className={classes.heroSubtitle}>
-                        Empowering displaced and under resourced LGBTQ youth
-                        with <b>clothing</b>, <b>care</b> and <b>compassion</b>{" "}
-                        and creating affirming messages of hope, inclusiveness
-                        and support.
+                        Out My Closet aims to address the critical needs of
+                        under-resourced and unhoused LGBTQ+ youth and adults
+                        through specialized clothing donations, counseling
+                        services, and educational workshops.
                     </div>
 
                     <div className={classes.donationContainer}>
@@ -59,11 +59,11 @@ const HeroComponent = (props) => {
                                 </Button>
                             </Link>
                         </Grid>
-                        <Grid item>
+                        {/* <Grid item>
                             <Button variant="contained" size="large">
                                 Get Help
                             </Button>
-                        </Grid>
+                        </Grid> */}
                     </Grid>
                 </div>
 
@@ -99,15 +99,15 @@ const useStyles = makeStyles()((theme) => ({
         position: "absolute",
         bottom: 0,
         right: 0,
-        width: 700,
+        width: "100%",
 
-        [theme.breakpoints.down("lg")]: {
-            width: 600,
-        },
+        // [theme.breakpoints.down("lg")]: {
+        //     width: 600,
+        // },
 
-        [theme.breakpoints.down("md")]: {
-            width: 500,
-        },
+        // [theme.breakpoints.down("md")]: {
+        //     width: 500,
+        // },
 
         [theme.breakpoints.down("sm")]: {
             display: "none",

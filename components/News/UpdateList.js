@@ -18,6 +18,7 @@ const UpdateList = (props) => {
     const [updates, setUpdates] = useState([]);
     const [processingUpdates, setProcessingUpdates] = useState(true);
     const { enqueueSnackbar } = useSnackbar();
+    const url = `blogs?filters[slug][$eq]=${props.slug}&populate=*`;
 
     const { loading, error, data } = useFetch("blogs/?populate=*");
 
@@ -41,7 +42,7 @@ const UpdateList = (props) => {
 
     return (
         <Fragment>
-            <div className={classes.filterContainer}>
+            {/* <div className={classes.filterContainer}>
                 <Grid container spacing={1} alignItems="center">
                     <Grid item xs>
                         <TextField
@@ -96,7 +97,7 @@ const UpdateList = (props) => {
                         )}
                     </Grid>
                 </Grid>
-            </div>
+            </div> */}
 
             <div className={classes.listContainer}>
                 {updates?.map((item, index) => (

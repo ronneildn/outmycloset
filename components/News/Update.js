@@ -33,7 +33,11 @@ const Update = (props) => {
                                     {data.subTitle}
                                 </div>
                             </div>
-                            <div className={classes.newTag}>new</div>
+                            {moment().diff(
+                                moment(data.created),
+                                "months",
+                                true
+                            ) < 1 && <div className={classes.newTag}>new</div>}
                         </div>
                         <div className={classes.desscription}>
                             <LinesEllipsis
@@ -45,7 +49,7 @@ const Update = (props) => {
                             />
                         </div>
                         <div className={classes.date}>
-                            {moment(data.data).format("MMM Do, YY")}
+                            {moment(data.created).format("MMM Do, YYYY")}
                         </div>
                     </div>
                 </div>

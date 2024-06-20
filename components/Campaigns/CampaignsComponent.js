@@ -5,17 +5,24 @@ import classNames from "classnames";
 import Grid from "@mui/material/Grid";
 import Button from "@mui/material/Button";
 import { useTheme } from "@mui/material/styles";
+import { useRouter } from "next/navigation";
 
 import PublicContent from "../Layout/PublicContent";
 import Header from "../Presentation/Header";
 import SectionHeader from "../Presentation/SectionHeader";
 import CampaignCarousel from "./CampaignCarousel";
+import staticData from "@/constants/data";
 
 const CamapignsComponent = (props) => {
     const { classes } = useStyles(props);
     const theme = useTheme();
+    const router = useRouter();
 
     const campaigns = CAMPAIGNSDATA;
+    console.log(staticData);
+    const donateHandler = () => {
+        router.push(staticData.donationsUrl);
+    };
 
     return (
         <div className={classes.root}>
@@ -74,6 +81,7 @@ const CamapignsComponent = (props) => {
                                             <Button
                                                 variant="contained"
                                                 size="large"
+                                                onClick={donateHandler}
                                             >
                                                 Donate
                                             </Button>

@@ -28,6 +28,17 @@ const nextConfig = {
 
         return config;
     },
+    async redirects() {
+        return [
+            //Basic redirect
+            {
+                source: "/donate",
+                destination:
+                    "https://outmycloset.harnessgiving.org/campaigns/15177",
+                permanent: true,
+            },
+        ];
+    },
 };
 
 export default nextConfig;

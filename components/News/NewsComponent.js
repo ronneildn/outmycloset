@@ -29,9 +29,9 @@ const NewsComponent = (props) => {
                     <UpdateList />
                 </div>
 
-                <div className={classes.socialEmbedContainer}>
+                {/* <div className={classes.socialEmbedContainer}>
                     <SocialEmbed />
-                </div>
+                </div> */}
             </PublicContent>
         </div>
     );

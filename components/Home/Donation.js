@@ -6,7 +6,7 @@ import Odometer from "../Presentation/Odometer";
 
 const Donation = (props) => {
     const { classes } = useStyles(props);
-    const donatedItems = 34388;
+    const donatedItems = 54607;
 
     return (
         <Fragment>

@@ -22,7 +22,7 @@ const HomeComponent = (props) => {
                 <div className={classes.homeContentContainer}>
                     <ServicesSection />
                     <UpdatesSection />
-                    <MerchSection />
+                    {/* <MerchSection /> */}
                 </div>
             </div>
         </Fragment>
