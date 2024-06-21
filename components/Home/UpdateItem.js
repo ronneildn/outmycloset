@@ -2,13 +2,14 @@ import { Fragment } from "react";
 import { makeStyles } from "tss-react/mui";
 import classNames from "classnames";
 import Image from "next/image";
+import Link from "next/link";
 
 const UpdateItem = (props) => {
     const { classes } = useStyles(props);
     const data = props.data;
 
     return (
-        <a className={classes.root} href={data.link}>
+        <Link className={classes.root} href={`/news/${data.slug}`}>
             <div className={classes.imageContainer}>
                 <img
                     className={classes.image}
@@ -24,7 +25,7 @@ const UpdateItem = (props) => {
                 <div className={classes.content}>{data.description}</div>
                 <div className={classes.link}>{data.linkLabel}</div>
             </div>
-        </a>
+        </Link>
     );
 };
 
