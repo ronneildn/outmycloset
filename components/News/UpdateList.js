@@ -7,6 +7,8 @@ import InputAdornment from "@mui/material/InputAdornment";
 import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
 import FilterAltRoundedIcon from "@mui/icons-material/FilterAltRounded";
 import FilterAltOffRoundedIcon from "@mui/icons-material/FilterAltOffRounded";
+import Pagination from "@mui/material/Pagination";
+import Stack from "@mui/material/Stack";
 import { useSnackbar } from "notistack";
 
 import Update from "./Update";
@@ -17,10 +19,14 @@ const UpdateList = (props) => {
     const [moreFilters, setMoreFilters] = useState(false);
     const [updates, setUpdates] = useState([]);
     const [processingUpdates, setProcessingUpdates] = useState(true);
+    const [pageNumber, setPageNumber] = useState(1);
+    const [pageSize, setPageSize] = useState(20);
     const { enqueueSnackbar } = useSnackbar();
     const url = `blogs?filters[slug][$eq]=${props.slug}&populate=*`;
 
-    const { loading, error, data } = useFetch("blogs/?populate=*");
+    const { data } = useFetch(
+        `blogs/?pagination[page]=${pageNumber}&pagination[pageSize]=${pageSize}&sort[0]=created:desc&populate=*`
+    );
 
     useEffect(() => {
         if (data?.error) {
@@ -30,14 +36,16 @@ const UpdateList = (props) => {
                 variant: "error",
             });
         } else if (data?.data) {
-            console.log(data);
             setUpdates(data.data);
-            console.log(updates);
         }
     }, [data, updates]);
 
     const handleFilterToggle = () => {
         setMoreFilters(!moreFilters);
+    };
+
+    const handleChangePage = (event, newPage) => {
+        setPageNumber(newPage);
     };
 
     return (
@@ -106,6 +114,19 @@ const UpdateList = (props) => {
                     </div>
                 ))}
             </div>
+
+            {data?.meta.pagination.pageCount > 1 && (
+                <div className={classes.paginationContainer}>
+                    <Stack spacing={2}>
+                        <Pagination
+                            count={data?.meta.pagination.pageCount}
+                            color="primary"
+                            page={pageNumber}
+                            onChange={handleChangePage}
+                        />
+                    </Stack>
+                </div>
+            )}
         </Fragment>
     );
 };
@@ -118,6 +139,10 @@ const useStyles = makeStyles()((theme) => ({
     listContainer: {},
     updateContainer: {
         margin: "20px 0",
+    },
+    paginationContainer: {
+        display: "flex",
+        justifyContent: "center",
     },
 }));
 
