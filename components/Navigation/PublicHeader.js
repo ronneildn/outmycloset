@@ -35,9 +35,9 @@ const PublicHeader = (props) => {
                 <Link href="/">
                     <Image
                         alt="Out My Closet logo"
-                        src="/img/logo_thumb.png"
+                        src="/img/logo_white.png"
                         width={100}
-                        height={20}
+                        height={10}
                     />
                 </Link>
             </div>
