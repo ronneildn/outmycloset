@@ -10,15 +10,18 @@ const UpdateItem = (props) => {
 
     return (
         <Link className={classes.root} href={`/news/${data.slug}`}>
-            <div className={classes.imageContainer}>
-                <img
-                    className={classes.image}
-                    alt="Out My Closet logo"
-                    src={
-                        data.coverImage?.data?.attributes?.formats?.medium?.url
-                    }
-                />
-            </div>
+            {data.coverImage?.data?.attributes?.formats?.medium?.url && (
+                <div className={classes.imageContainer}>
+                    <img
+                        className={classes.image}
+                        alt="Out My Closet logo"
+                        src={
+                            data.coverImage?.data?.attributes?.formats?.medium
+                                ?.url
+                        }
+                    />
+                </div>
+            )}
             <div className={classes.container}>
                 <div className={classes.head}>
                     <h3 className={classes.title}>{data.title}</h3>
