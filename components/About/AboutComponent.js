@@ -13,24 +13,69 @@ const AboutComponent = (props) => {
         <div className={classes.root}>
             <PublicContent margin>
                 <div className={classes.aboutContainer}>
-                    <SectionHeader title={"Who is Out My Closet"} />
+                    <SectionHeader title={"Why we exist"} />
                     <p>
-                        Founded in 2013 by LGBTQ activist, Michael A. Narain,
-                        Out My Closet empowers displaced & under resourced LGBTQ
-                        youth with clothing, care and compassion and creates
-                        affirming multimedia messages of hope, inclusiveness &
-                        support. OMC services displaced youth who are in
-                        vulnerable and crucial states. OMC addresses immediate
-                        needs such as clothing and offers referrals to agencies
-                        where shelter and food are provided. OMC conducts its
-                        services in mannerisms that uplifts, motivates and
-                        reinforce displaced youth. We reinforce validation and
-                        acceptance of sexual identity and gender expression. We
-                        also work with other agencies and organizations to offer
-                        consciousness on the needs of the LGBTQ community.
+                        On November 11, 2013, Out My Closet was started in
+                        response to the tragic suicide of a gay youth patient of
+                        our founder, Michael Narain who faced many challenges
+                        while being unhoused, including mental, physical,
+                        emotional, and sexual trauma
+                    </p>
+
+                    <p>
+                        Many LGBTQ youth who are kicked out or flee toxic
+                        environments, run away with very few clothing resources,
+                        often just what they can fit into a backpack. While
+                        living on the streets, these items become soiled,
+                        outgrown, seasonally inappropriate, or no longer align
+                        with their gender identity. These kids may often engage
+                        in risky behaviors like survival sex, just to have their
+                        basic needs met.
+                    </p>
+
+                    <p>
+                        To address these needs, Out My Closet&apos;s mobile
+                        Pop-Up Shop was created as a lifeline for unhoused and
+                        under-resourced LGBTQ+ youth.
+                    </p>
+
+                    <p>
+                        Out My Closet&apos;s mobile Pop-Up Shop brings a wealth
+                        of resources directly to shelters, drop-in programs,
+                        colleges, and community-based organizations serving
+                        unhoused and under-resourced LGBTQ+ youth and adults in
+                        New York City and South Florida. We offer an extensive
+                        variety of gender-affirming clothing, shoes,
+                        accessories, cosmetics, and personal hygiene products.
+                        Our model ensures a beautiful, safe, and dignified
+                        shopping experience, fostering inclusivity and
+                        self-worth among marginalized communities.
+                    </p>
+
+                    <p>
+                        Our Pop-Up Shop Models are designed to be more than just
+                        a place to pick up essentials—they are a celebration of
+                        individuality and style. Each shop features a diverse
+                        range of items in various sizes and styles, meticulously
+                        curated to meet the unique needs and preferences of our
+                        clients. From trendy outfits to timeless classics, we
+                        provide options that allow everyone to express their
+                        true selves with confidence.
+                    </p>
+
+                    <p>
+                        The beauty of our Pop-Up Shops lies not only in the
+                        products we offer but also in the welcoming and
+                        supportive atmosphere we create. Every detail, from the
+                        layout to the lighting, is thoughtfully designed to
+                        mimic the experience of shopping in a high-end boutique,
+                        ensuring that every visitor feels valued and respected.
+                        By transforming the shopping experience, we help to
+                        elevate the self-esteem and sense of belonging for those
+                        who need it most.
                     </p>
                 </div>
-                <div className={classes.aboutContainer}>
+                {/* <div className={classes.aboutContainer}>
                     <SectionHeader title={"About The Founder"} />
                     <div className={classes.innerContainer}>
                         <div className={classes.imageContainer}>
@@ -90,7 +135,7 @@ const AboutComponent = (props) => {
                             our name.&quot
                         </p>
                     </div>
-                </div>
+                </div> */}
             </PublicContent>
         </div>
     );

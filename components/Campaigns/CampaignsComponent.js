@@ -19,7 +19,7 @@ const CamapignsComponent = (props) => {
     const router = useRouter();
 
     const campaigns = CAMPAIGNSDATA;
-    console.log(staticData);
+
     const donateHandler = () => {
         router.push(staticData.donationsUrl);
     };

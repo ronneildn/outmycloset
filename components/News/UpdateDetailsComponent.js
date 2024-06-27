@@ -36,7 +36,7 @@ const UpdateDetailsComponent = (props) => {
             });
         } else if (data?.data) {
             setBlogs(data.data);
-            console.log(blog);
+            //console.log(blog);
         }
 
         setLoading(false);

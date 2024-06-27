@@ -1,16 +1,34 @@
-import { Fragment } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { makeStyles } from "tss-react/mui";
 import classNames from "classnames";
+import useFetch from "@/hooks/useFetch";
 
 import Odometer from "../Presentation/Odometer";
 
 const Donation = (props) => {
     const { classes } = useStyles(props);
+    const [donationNumber, setDonationNumber] = useState(0);
+    const url = `donation-numbers/?id=1`;
+    const { loading, error, data } = useFetch(url);
+
+    useEffect(() => {
+        if (data?.error) {
+            console.log("error");
+            enqueueSnackbar("Sorry an error occured getting blog", {
+                autoHideDuration: 3000,
+                variant: "error",
+            });
+        } else if (data?.data) {
+            setDonationNumber(data.data[0]?.attributes?.donations);
+            //console.log(donationNumber);
+        }
+    }, [data, donationNumber]);
 
     return (
         <Fragment>
             <div className={classes.root}>
-                <Odometer value={props.number} />
+                {donationNumber > 0 && <Odometer value={donationNumber} />}
+
                 <div className={classes.label}>Donated Items</div>
             </div>
         </Fragment>

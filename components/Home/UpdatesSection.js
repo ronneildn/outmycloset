@@ -22,9 +22,9 @@ const UpdatesSection = (props) => {
                 variant: "error",
             });
         } else if (data?.data) {
-            console.log(data);
+            //console.log(data);
             setUpdates(data.data);
-            console.log(updates);
+            //console.log(updates);
         }
     }, [data, updates]);
 

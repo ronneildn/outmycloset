@@ -84,7 +84,7 @@ const ServicesSection = (props) => {
                     <SectionHeader
                         title={"Our services"}
                         subTitle={
-                            "As a non profit, we a proud to try our best to deliver these social services."
+                            "We deliver client-centered, evidence-based programs and high-impact supportive services, implementing creativity and adaptability for the modern client."
                         }
                     />
 
