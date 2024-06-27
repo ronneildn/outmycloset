@@ -14,7 +14,9 @@ const UpdateItem = (props) => {
                 <img
                     className={classes.image}
                     alt="Out My Closet logo"
-                    src={data.coverImage.data.attributes.formats.medium.url}
+                    src={
+                        data.coverImage?.data?.attributes?.formats?.medium?.url
+                    }
                 />
             </div>
             <div className={classes.container}>
