@@ -10,7 +10,9 @@ import useFetch from "@/hooks/useFetch";
 const UpdatesSection = (props) => {
     const { classes } = useStyles(props);
     const [updates, setUpdates] = useState([]);
-    const { loading, error, data } = useFetch("blogs/?populate=*");
+    const { loading, error, data } = useFetch(
+        "blogs/?&sort[0]=created:desc&populate=*"
+    );
 
     useEffect(() => {
         if (data?.error) {
