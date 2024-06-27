@@ -1,83 +1,81 @@
-import {Fragment} from 'react';
-import { makeStyles } from 'tss-react/mui';
-import Grid from '@mui/material/Grid';
+import { Fragment } from "react";
+import { makeStyles } from "tss-react/mui";
+import Grid from "@mui/material/Grid";
 import classNames from "classnames";
-import { useTheme } from '@mui/material/styles';
-import CounselingIcon from '@mui/icons-material/SupervisorAccountRounded';
-import HangerIcon from '@mui/icons-material/CheckroomRounded';
-import CommunityIcon from '@mui/icons-material/GroupsRounded';
-import EducationIcon from '@mui/icons-material/SchoolRounded';
+import { useTheme } from "@mui/material/styles";
+import CounselingIcon from "@mui/icons-material/SupervisorAccountRounded";
+import HangerIcon from "@mui/icons-material/CheckroomRounded";
+import CommunityIcon from "@mui/icons-material/GroupsRounded";
+import EducationIcon from "@mui/icons-material/SchoolRounded";
 
-import SectionHeader from '../Presentation/SectionHeader';
-import HomeGallery from './HomeGallery';
+import SectionHeader from "../Presentation/SectionHeader";
+import HomeGallery from "./HomeGallery";
 
 const ServicesSection = (props) => {
-
-    const {classes} = useStyles(props);
+    const { classes } = useStyles(props);
     const theme = useTheme();
 
     const serviceItem = (type) => {
         let data = {};
 
         switch (type) {
-        case "counseling":
-            data = {
-                title: "Counseling",
-                description: "Social Workers, Clinicians, Life Coaches and other experienced counselors. ",
-                icon: <CounselingIcon />,
-                color: theme.palette.primary.main,
-            }
-            break;
-        case "clothing":
-            data = {
-                title: "Clothing",
-                description: "New and lightly worn clothing to displaced and under resourced youth.",
-                icon: <HangerIcon />,
-                color: theme.palette.primary.accent,
-
-            }
-            break;
-        case "community":
-            data = {
-                title: "Community",
-                description: "Express artistically and communicate interests relative to supporting and building healthy platonic relationships.",
-                icon: <CommunityIcon />,
-                color: theme.palette.primary.accent2,
-
-            }
-            break;
-        case "education":
-            data = {
-                title: "Education",
-                description: "Working with educators in their respective schools to initiate LGBTQ support groups or contribute to already existing groups.",
-                icon: <EducationIcon />,
-                color: theme.palette.primary.accent3,
-
-            }
-            break;
-        };
+            case "counseling":
+                data = {
+                    title: "Counseling",
+                    description:
+                        "Social Workers, Clinicians, Life Coaches and other experienced counselors. ",
+                    icon: <CounselingIcon />,
+                    color: theme.palette.primary.main,
+                };
+                break;
+            case "clothing":
+                data = {
+                    title: "Clothing",
+                    description:
+                        "New and lightly worn clothing to displaced and under resourced youth.",
+                    icon: <HangerIcon />,
+                    color: theme.palette.primary.accent,
+                };
+                break;
+            case "community":
+                data = {
+                    title: "Community",
+                    description:
+                        "Express artistically and communicate interests relative to supporting and building healthy platonic relationships.",
+                    icon: <CommunityIcon />,
+                    color: theme.palette.primary.accent2,
+                };
+                break;
+            case "education":
+                data = {
+                    title: "Education",
+                    description:
+                        "Working with educators in their respective schools to initiate LGBTQ support groups or contribute to already existing groups.",
+                    icon: <EducationIcon />,
+                    color: theme.palette.primary.accent3,
+                };
+                break;
+        }
 
         return (
             <a className={classes.serviceItem}>
                 <div className={classes.iconContainer}>
                     <div
                         className={classNames(classes.icon, "icon")}
-                        style={{background: data.color}}
+                        style={{ background: data.color }}
                     >
                         {data.icon}
                     </div>
                 </div>
                 <div className={classes.serviceData}>
-                    <div className={classes.serviceTitle}>
-                        {data.title}
-                    </div>
+                    <div className={classes.serviceTitle}>{data.title}</div>
                     <div className={classes.serviceDescription}>
                         {data.description}
                     </div>
                 </div>
             </a>
-        )
-    }
+        );
+    };
 
     return (
         <section className={classes.container}>
@@ -85,7 +83,9 @@ const ServicesSection = (props) => {
                 <div className={classes.innerContainer}>
                     <SectionHeader
                         title={"Our services"}
-                        subTitle={"As a non profit, we a proud to try our best to deliver these social services."}
+                        subTitle={
+                            "As a non profit, we a proud to try our best to deliver these social services."
+                        }
                     />
 
                     <Grid
@@ -94,7 +94,7 @@ const ServicesSection = (props) => {
                         spacing={2}
                         alignItems="flex-start"
                     >
-                        <Grid item container spacing={1} xs={12} md={7}>
+                        <Grid item container spacing={1}>
                             <Grid item xs={12} md={6}>
                                 {serviceItem("counseling")}
                             </Grid>
@@ -108,11 +108,11 @@ const ServicesSection = (props) => {
                                 {serviceItem("education")}
                             </Grid>
                         </Grid>
-                        <Grid item xs>
+                        {/* <Grid item xs>
                             <div className={classes.galleryContainer}>
                                 <HomeGallery />
                             </div>
-                        </Grid>
+                        </Grid> */}
                     </Grid>
                 </div>
             </div>
@@ -126,23 +126,21 @@ const useStyles = makeStyles()((theme) => ({
         maxWidth: theme.size.pageMaxWidth,
         padding: "50px 40px",
 
-        [theme.breakpoints.down('md')]: {
+        [theme.breakpoints.down("md")]: {},
 
-        },
-
-        [theme.breakpoints.down('sm')]: {
+        [theme.breakpoints.down("sm")]: {
             padding: "50px 20px",
-        }
+        },
     },
-    container:{
+    container: {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
         color: theme.palette.primary.foregroundTint,
 
-        "h2": {
+        h2: {
             color: theme.palette.primary.foreground,
-        }
+        },
     },
     serviceItem: {
         padding: 20,
@@ -152,22 +150,21 @@ const useStyles = makeStyles()((theme) => ({
         color: theme.palette.primary.foregroundTint,
         cursor: "pointer",
 
-        "&:hover" : {
+        "&:hover": {
             transition: "all 0.3s ease 0s",
             boxShadow: "0px 0px 8px rgba(0, 0, 0, 0.2)",
 
-
-            ".icon" : {
+            ".icon": {
                 background: `linear-gradient(to bottom right,
                     ${theme.palette.primary.main},
                     ${theme.palette.primary.accent},
                     ${theme.palette.primary.accent2}
                 ) !important`,
-            }
-        }
+            },
+        },
     },
     iconContainer: {
-        marginRight: 10
+        marginRight: 10,
     },
     icon: {
         display: "flex",
@@ -178,26 +175,23 @@ const useStyles = makeStyles()((theme) => ({
         height: 50,
         borderRadius: 25,
         color: theme.palette.secondary.foreground,
-
     },
-    serviceData: {
-
-    },
+    serviceData: {},
     serviceTitle: {
         color: theme.palette.primary.foreground,
         fontSize: 18,
-        fontWeight: 700
+        fontWeight: 700,
     },
     serviceDescription: {
-        fontSize: 14
+        fontSize: 14,
     },
     galleryContainer: {
         padding: 10,
 
-        [theme.breakpoints.down('md')]: {
-            margin: "60px 10px 40px"
-        }
-    }
+        [theme.breakpoints.down("md")]: {
+            margin: "60px 10px 40px",
+        },
+    },
 }));
 
 export default ServicesSection;

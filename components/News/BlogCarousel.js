@@ -25,7 +25,7 @@ const BlogCarousel = (props) => {
         setIndex(current);
     };
 
-    const slides = props.images.map((item) => {
+    const slides = props.images?.map((item) => {
         return {
             src: item.attributes.url,
             alt: item.attributes.name,
@@ -42,25 +42,27 @@ const BlogCarousel = (props) => {
                 index={index}
             />
 
-            <Carousel enableSwipe infinite breakPoints={breakPoints}>
-                {props.images.map((item, index) => {
-                    return (
-                        <div
-                            key={item._id}
-                            className={classes.imageContainer}
-                            onClick={() => imageClickHandle(index)}
-                        >
-                            <Image
-                                className={classes.image}
-                                alt={item.attributes.name}
-                                src={item.attributes.url}
-                                width={100}
-                                height={100}
-                            />
-                        </div>
-                    );
-                })}
-            </Carousel>
+            {props.images?.length && (
+                <Carousel enableSwipe infinite breakPoints={breakPoints}>
+                    {props.images?.map((item, index) => {
+                        return (
+                            <div
+                                key={item._id}
+                                className={classes.imageContainer}
+                                onClick={() => imageClickHandle(index)}
+                            >
+                                <Image
+                                    className={classes.image}
+                                    alt={item.attributes.name}
+                                    src={item.attributes.url}
+                                    width={100}
+                                    height={100}
+                                />
+                            </div>
+                        );
+                    })}
+                </Carousel>
+            )}
         </div>
     );
 };

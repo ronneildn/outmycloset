@@ -40,7 +40,12 @@ const useStyles = makeStyles()((theme) => ({
         width: "100%",
         borderRadius: 10,
     },
-    contentContainer: {},
+    contentContainer: {
+        img: {
+            width: "100%",
+            borderRadius: 10,
+        },
+    },
 }));
 
 export default Blog;
