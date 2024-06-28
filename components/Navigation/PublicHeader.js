@@ -146,6 +146,7 @@ const useStyles = makeStyles()((theme) => ({
     },
     logoContainerDrawer: {
         padding: 20,
+        marginBottom: 40,
     },
 }));
 

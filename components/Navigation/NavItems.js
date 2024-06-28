@@ -80,6 +80,7 @@ const useStyles = makeStyles()((theme) => ({
     },
     drawerItem: {
         padding: "10px 20px",
+        fontSize: 18,
     },
 }));
 
