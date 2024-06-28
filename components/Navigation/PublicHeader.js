@@ -31,7 +31,7 @@ const PublicHeader = (props) => {
     const drawer = (
         <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
             {/* Logo */}
-            <div className={classes.logoContainer}>
+            <div className={classes.logoContainerDrawer}>
                 <Link href="/">
                     <Image
                         alt="Out My Closet logo"
@@ -143,6 +143,9 @@ const useStyles = makeStyles()((theme) => ({
         ".MuiPaper-root": {
             backgroundColor: theme.palette.primary.main,
         },
+    },
+    logoContainerDrawer: {
+        padding: 20,
     },
 }));
 
