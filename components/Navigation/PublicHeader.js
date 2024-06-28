@@ -93,6 +93,7 @@ const PublicHeader = (props) => {
             <Box component="nav">
                 <Drawer
                     //container={container}
+                    className={classes.drawer}
                     variant="temporary"
                     open={mobileOpen}
                     onClose={handleDrawerToggle}
@@ -137,6 +138,11 @@ const useStyles = makeStyles()((theme) => ({
         display: "flex",
         flex: "1 1 0%",
         alignItems: "center",
+    },
+    drawer: {
+        ".MuiPaper-root": {
+            backgroundColor: theme.palette.primary.main,
+        },
     },
 }));
 
