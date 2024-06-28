@@ -39,7 +39,12 @@ const NavItems = (props) => {
                     <Link
                         key={index}
                         href={item.url}
-                        className={classes.navItem}
+                        className={classNames(
+                            classes.navItem,
+                            props.position === "header"
+                                ? classes.headerItem
+                                : classes.drawerItem
+                        )}
                     >
                         {item.name}
                     </Link>
@@ -72,6 +77,9 @@ const useStyles = makeStyles()((theme) => ({
         "&:hover": {
             backgroundColor: theme.palette.primary.dark,
         },
+    },
+    drawerItem: {
+        padding: "10px 20px",
     },
 }));
 
