@@ -17,9 +17,9 @@ const AboutComponent = (props) => {
                     <p>
                         On November 11, 2013, Out My Closet was started in
                         response to the tragic suicide of a gay youth patient of
-                        our founder, Michael Narain who faced many challenges
+                        our founder, Michael Narain, who faced many challenges
                         while being unhoused, including mental, physical,
-                        emotional, and sexual trauma
+                        emotional, and sexual trauma.
                     </p>
 
                     <p>
