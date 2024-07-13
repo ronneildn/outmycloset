@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import Link from "next/link";
 import { makeStyles } from "tss-react/mui";
 import Grid from "@mui/material/Grid";
 import classNames from "classnames";
@@ -23,7 +24,7 @@ const ServicesSection = (props) => {
                 data = {
                     title: "Counseling",
                     description:
-                        "Social Workers, Clinicians, Life Coaches and other experienced counselors. ",
+                        "Curating supportive services and affirming spaces for HIV+ and HIV- vulnerable queer young men of color.",
                     icon: <CounselingIcon />,
                     color: theme.palette.primary.main,
                 };
@@ -32,16 +33,15 @@ const ServicesSection = (props) => {
                 data = {
                     title: "Clothing",
                     description:
-                        "New and lightly worn clothing to displaced and under resourced youth.",
+                        "Executing elevated mobile resource pop-up boutiques",
                     icon: <HangerIcon />,
                     color: theme.palette.primary.accent,
                 };
                 break;
             case "community":
                 data = {
-                    title: "Community",
-                    description:
-                        "Express artistically and communicate interests relative to supporting and building healthy platonic relationships.",
+                    title: "Cyber Community",
+                    description: "Creating social media empowerment campaigns.",
                     icon: <CommunityIcon />,
                     color: theme.palette.primary.accent2,
                 };
@@ -50,7 +50,7 @@ const ServicesSection = (props) => {
                 data = {
                     title: "Education",
                     description:
-                        "Working with educators in their respective schools to initiate LGBTQ support groups or contribute to already existing groups.",
+                        "Immersive intensive internship for Public Health, Social Work, and Fashion Industry LGBTQ+ students",
                     icon: <EducationIcon />,
                     color: theme.palette.primary.accent3,
                 };
@@ -58,7 +58,7 @@ const ServicesSection = (props) => {
         }
 
         return (
-            <a className={classes.serviceItem}>
+            <Link className={classes.serviceItem} href="/services">
                 <div className={classes.iconContainer}>
                     <div
                         className={classNames(classes.icon, "icon")}
@@ -73,7 +73,7 @@ const ServicesSection = (props) => {
                         {data.description}
                     </div>
                 </div>
-            </a>
+            </Link>
         );
     };
 
@@ -101,11 +101,12 @@ const ServicesSection = (props) => {
                             <Grid item xs={12} md={6}>
                                 {serviceItem("clothing")}
                             </Grid>
-                            <Grid item xs={12} md={6}>
-                                {serviceItem("community")}
-                            </Grid>
+
                             <Grid item xs={12} md={6}>
                                 {serviceItem("education")}
+                            </Grid>
+                            <Grid item xs={12} md={6}>
+                                {serviceItem("community")}
                             </Grid>
                         </Grid>
                         {/* <Grid item xs>
