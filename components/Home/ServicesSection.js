@@ -33,7 +33,7 @@ const ServicesSection = (props) => {
                 data = {
                     title: "Clothing",
                     description:
-                        "Executing elevated mobile resource pop-up boutiques",
+                        "Executing elevated mobile resource pop-up boutiques.",
                     icon: <HangerIcon />,
                     color: theme.palette.primary.accent,
                 };

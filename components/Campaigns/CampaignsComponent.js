@@ -67,7 +67,7 @@ const CamapignsComponent = (props) => {
                                 <div className={classes.textContainer}>
                                     <div>{item.html}</div>
                                     <div className={classes.galleryContainer}>
-                                        {!!item.gallery.length && (
+                                        {!!item.gallery?.length && (
                                             <CampaignCarousel
                                                 images={item.gallery}
                                             />
@@ -205,42 +205,32 @@ const CAMPAIGNSDATA = [
         html: (
             <div>
                 <p>
-                    OMC realizes that people affected by HIV/AIDS are living
-                    with the virus. We will have ongoing campaigns of
-                    testimonials from health care professionals and those living
-                    with the virus. It&apos;s TIME to STOP the clock of HIV
-                    stigma. Out My Closet shares stories of support to diminish
-                    the taboos, negative connotations and the HIV-ism that
-                    PEOPLE who are LIVING with HIV face.
-                </p>
-                <p>
-                    Youth aged 13 to 24 accounted for an estimated 26% of all
-                    new HIV infections in the United States in 2010. Most new
-                    HIV infections among youth occur among gay and bisexual
-                    males; there was a 22% increase in estimated new infections
-                    in this group from 2008 to 2010. Almost 60% of youth with
-                    HIV in the United States do not know they are infected.
-                    Youth in the United States account for a substantial number
-                    of HIV infections. Gay, bisexual, and other men who have sex
-                    with men account for most new infections in the age group 13
-                    to 24; black/African American or Hispanic/Latino gay and
-                    bisexual men are especially affected. Continual HIV
-                    prevention outreach and education efforts, including
-                    programs on abstinence, delaying the initiation of sex, and
-                    negotiating safer sex for the spectrum of sexuality among
-                    youth are urgently needed for a new generation at risk.
+                    &quot;OMC 365&quot; is Out My Closet&apos;s dynamic social
+                    media campaign dedicated to reducing HIV stigma, with a
+                    particular focus on queer men of color. This initiative
+                    seeks to address and dismantle the harmful stereotypes and
+                    misinformation that disproportionately affect Black and
+                    Latino young gay men. According to the CDC, Black and Latino
+                    men who have sex with men accounted for 39% and 30% of new
+                    HIV diagnoses, respectively, in the United States in recent
+                    years. By sharing empowering stories, educational content,
+                    and providing resources, OMC 365 aims to create a supportive
+                    community, promote awareness, and foster an environment of
+                    acceptance and understanding. Join us in the fight to end
+                    HIV stigma and support the health and well-being of queer
+                    men of color.
                 </p>
             </div>
         ),
-        gallery: [
-            "/img/img_OMC365_2.jpg",
-            "/img/img_OMC365_3.jpg",
-            "/img/img_OMC365_4.jpg",
-            "/img/img_OMC365_5.jpg",
-            "/img/img_OMC365_6.jpg",
-            "/img/img_OMC365_7.jpg",
-            "/img/img_OMC365_8.jpg",
-        ],
+        // gallery: [
+        //     "/img/img_OMC365_2.jpg",
+        //     "/img/img_OMC365_3.jpg",
+        //     "/img/img_OMC365_4.jpg",
+        //     "/img/img_OMC365_5.jpg",
+        //     "/img/img_OMC365_6.jpg",
+        //     "/img/img_OMC365_7.jpg",
+        //     "/img/img_OMC365_8.jpg",
+        // ],
         hash: "#OMC365",
     },
     {
@@ -249,30 +239,28 @@ const CAMPAIGNSDATA = [
         html: (
             <div>
                 <p>
-                    OMC Transform are stories of support and experiences
-                    directed to impact the Trans community offering hope and
-                    empowerment. These campaigns offer testimonials from Trans
-                    people as they share intimate stories of the challenges
-                    which they face during the steps of their transition,
-                    discrimination, transphobia and other biases and hate but
-                    more so the experiences and values of living in their
-                    absolute truths.
-                </p>
-                <p>
-                    The 2011 Hate Violence Report from the National Coalition of
-                    Anti-Violence Projects shows anti-LGBT hate crime murders
-                    increased 11% from 2010, in which 27 murders occurred, to
-                    2011, in which 30 murders occurred. Of the victims murdered,
-                    87% were people of color, and 40% were transgender women.
-                    Transgender people of color were also 28% more likely to
-                    experience physical violence compared to people who were not
-                    transgender people of color. Transgender people of color
-                    were also 28% more likely to experience physical violence
-                    compared to people who were not transgender people of color.
+                    &quot;OMC TRANSFORM&quot; is Out My Closet&apos;s inspiring
+                    social media campaign aimed at educating and empowering
+                    transgender youth. By sharing powerful stories of resilience
+                    and empowerment from transgender and gender non-conforming
+                    people of color, this initiative highlights the strength and
+                    courage of individuals with lived experiences. &quot;OMC
+                    TRANSFORM&quot; seeks to provide a platform for these
+                    voices, offering education, support, and visibility.
+                    Alarmingly, the Human Rights Campaign reports that in 2020,
+                    at least 44 transgender or gender non-conforming people,
+                    most of them transgender women of color, were violently
+                    killed in the U.S. Through these shared narratives, the
+                    campaign aims to build a more inclusive and understanding
+                    community, fostering acceptance and celebrating the
+                    diversity and resilience of transgender youth. Join us in
+                    amplifying these voices and supporting the empowerment of
+                    transgender and gender non-conforming individuals.
                 </p>
             </div>
         ),
         gallery: [],
+        hash: "#OMCTransform",
     },
     {
         name: "#BYEH8R",
@@ -280,26 +268,29 @@ const CAMPAIGNSDATA = [
         html: (
             <div>
                 <p>
-                    &quot;#BYEH8R&quot; is OMC&apos;s anti-bullying campaign in
-                    which we enforce that there is no room in our schools and
-                    our lives for HOMOPHOBIA/HOMONEGATIVISM or any other form of
-                    discrimination and H8. We are strongly saying &quot;GOOD
-                    BYE&quot; to the HATE in our schools and shutting H8 out. We
-                    engage with students by offering them awareness in terms on
-                    which they can understand the impact of H8 speech and
-                    actions.
-                </p>
-                <p>
-                    LGBTQ youth deal with bullying in the form of violence,
-                    harassment (including cyber-bullying), and attacks. Students
-                    who constantly heard bigoted verbal abuse from name-calling
-                    like &quot;homo&quot;, &quot;fag&quot; or &quot;sissy&quot;
-                    more than two dozen times per day, which is one derogatory
-                    comment every fifteen minutes of each day.
+                    &quot;OMC&apos;s BYH8R (BYE HATER)&quot; is OMC&apos;s is
+                    Out My Closet&apos;s impactful social media campaign
+                    dedicated to addressing and dismantling homophobia and
+                    transphobia within school settings. By collaborating with
+                    Student Government Association (SGA) bodies, OMC initiates
+                    programs such as clothing drives and allyship building
+                    activities. According to GLSEN&apos;s National School
+                    Climate Survey, 70.1% of LGBTQ students reported being
+                    verbally harassed, and 28.9% were physically harassed in the
+                    past year due to their sexual orientation. This campaign
+                    aims to create safer, more inclusive environments for LGBTQ
+                    students by promoting understanding, acceptance, and active
+                    support. Through engaging content and community-driven
+                    initiatives, &quot;OMC&apos;s BYH8R&quot; strives to
+                    eliminate discrimination and foster a culture of respect and
+                    equality in schools. Join us in saying &quot;BYE&quot; to
+                    hate and building a brighter, more inclusive future for all
+                    students.
                 </p>
             </div>
         ),
         gallery: [],
+        hash: "#OMCBYH8R",
     },
     {
         name: "OMC Heeling Words",
@@ -307,55 +298,28 @@ const CAMPAIGNSDATA = [
         html: (
             <div>
                 <p>
-                    OMC &quot;Heeling Words&quot; is the real behind the scenes
-                    interviews from the Drag Entertainers we adore. &quot;Big
-                    Heels, Big Hair, Big Hearts! We get an in depth look into
-                    the lives and the stories behind the makeup, the hair and
-                    listen to their hearts. Heeling Words is a campaign which
-                    allows us to hear the stories leading up to drag stardom.
-                </p>
-                <p>
-                    While drag is very much associated with gay men and gay
-                    culture, there are drag artists of all genders and
-                    sexualities who do drag for various reasons or purposes.
-                    Generally drag queens are males who dress and act in a
-                    female gender role, often exaggerating certain
-                    characteristics (such as make-up and eyelashes) for comic,
-                    dramatic or satirical effect.
-                </p>
-            </div>
-        ),
-        gallery: [],
-    },
-    {
-        name: "OMC Empower",
-        imgUrl: "/img/graphic_OMCempower.png",
-        html: (
-            <div>
-                <p>
-                    OMC Empower is OMC&apos;s campaign which offers words of
-                    enrichment and encouragement from the LGBTQ community and
-                    its allies. OMC offers supportive words from experienced
-                    based presenters. &quot;OMC EMPOWER&quot; are real life
-                    accounts of perseverance and emotional vulnerability in
-                    hopes that the sharing of one&apos;s experiences will offer
-                    solidarity. These topics may include coming out, overcoming
-                    suicide, depression, self-mutilation, surviving
-                    homelessness, spirituality reconciliation, and other stories
-                    of resilience.
-                </p>
-                <p>
-                    Researchers have found that the attempted suicide rates
-                    &#38; suicidal ideations among lesbian, gay, bisexual,
-                    transgender, queer and questioning youth is comparatively
-                    higher than among the general population. LGBTQ teens and
-                    young adults have one of the highest rates of suicide
-                    attempts. We have created specialized campaigns that will
-                    serve to bring healing and support to our LGBTQ members.
+                    &quot;OMC&apos;s HEELING WORDS&quot; is Out My Closet&apos;s
+                    captivating social media campaign featuring heartfelt
+                    interviews with many prominent drag entertainers. This
+                    series offers an intimate glimpse into the lives of
+                    well-known queens, including RuPaul&apos;s Drag Race
+                    contestants like Bianca Del Rio, Bob The Drag Queen, Ginger
+                    Minj, BenDeLaCreme, and Cynthia Lee Fontaine, as well as
+                    other celebrated performers such as Harmonica Sunbeam and
+                    Vikki Vox. These personal stories reveal their journeys of
+                    coming out, overcoming hardships, and navigating obstacles,
+                    providing a genuine look beneath the wigs. Through
+                    &quot;OMC&apos;s HEELING WORDS,&quot; we celebrate the
+                    resilience, strength, and artistry of these incredible
+                    individuals while fostering understanding and acceptance
+                    within the LGBTQ community and beyond. Join us in listening
+                    to their inspiring tales and honoring their contributions to
+                    the world of drag.
                 </p>
             </div>
         ),
         gallery: [],
+        hash: "#OMCHeelingWords",
     },
     {
         name: "OMC Glare",
@@ -363,27 +327,50 @@ const CAMPAIGNSDATA = [
         html: (
             <div>
                 <p>
-                    LGBT youth can suffer from self-esteem and identity issues.
-                    These issues are complicated and can be precursors to
-                    substance abuse. The lack of social acceptance that LGBT
-                    youth experience can lead to dangerous behavior. LGBT youth
-                    experience higher rates of cigarette, alcohol and marijuana
-                    use, as well as other drugs. Research done by the University
-                    of Pittsburgh found that LGBT youth are 190% more likely to
-                    resort to substance abuse, including an increase of 340% for
-                    bisexual youth and 400% for lesbian youth. When LGBT youth
-                    use drugs to deal with their pain, mental health issues can
-                    be aggravated. LGBT youth, especially male youth, can resort
-                    to criminal behavior as a way to escape the pain which they
-                    feel or to feed their addiction. Some youth drop out of
-                    school, run away or end up homeless when experiencing LGBT
-                    issues, especially when they are rejected by their family
-                    and peers. Out My Closet&apos;s &quot;GLARE,&quot; builds
-                    affirming media campaigns focused on the LGBTQ youth
-                    population and substance abuse.
+                    &quot;OMC&apos;s GLARE (GLBT ADDICTION RECOVERY
+                    EMPOWERMENT)&quot; is Out My Closet&apos;s poignant social
+                    media campaign focusing on intimate and personal stories of
+                    overcoming addiction within the LGBTQ community. These
+                    narratives delve into the circumstances that lead to
+                    addiction, experiences of relapsing, and journeys of
+                    personal growth and recovery. According to the National
+                    Institute on Drug Abuse, LGBTQ individuals are more than
+                    twice as likely as their heterosexual peers to experience
+                    substance abuse. Through &quot;OMC&apos;s GLARE,&quot; we
+                    aim to shed light on these challenges, provide support, and
+                    inspire others with stories of resilience and empowerment.
+                    Join us in raising awareness, breaking the stigma, and
+                    championing the recovery journeys of LGBTQ individuals.
                 </p>
             </div>
         ),
         gallery: [],
+        hash: "#OMCGlare",
+    },
+    {
+        name: "OMC Empower",
+        imgUrl: "/img/graphic_OMCempower.png",
+        html: (
+            <div>
+                <p>
+                    &quot;OMC&apos;s EMPOWER&quot; is Out My Closet&apos;s
+                    heartfelt social media campaign offering testimonials and
+                    support from LGBTQ community members and allies to LGBTQ
+                    youth facing challenges, hardships, and the difficulties of
+                    coming out. This initiative also provides vital support for
+                    those contemplating suicide. Alarmingly, according to The
+                    Trevor Project, LGBTQ youth are more than four times as
+                    likely to attempt suicide compared to their peers. Through
+                    &quot;OMC&apos;s EMPOWER,&quot; we share stories of
+                    resilience, provide resources, and create a supportive
+                    network to help LGBTQ youth navigate their struggles and
+                    find hope. Join us in fostering a community of
+                    understanding, acceptance, and empowerment, and in making a
+                    difference in the lives of LGBTQ youth.
+                </p>
+            </div>
+        ),
+        gallery: [],
+        hash: "#OMCEmpower",
     },
 ];
