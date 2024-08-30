@@ -112,6 +112,7 @@ const useStyles = makeStyles()((theme) => ({
         h2: {
             fontSize: 25,
             fontWeight: 500,
+            textTransform: "uppercase",
         },
 
         p: {
@@ -134,6 +135,7 @@ const useStyles = makeStyles()((theme) => ({
         textAlign: "center",
         fontWeight: 700,
         marginBottom: 5,
+        textTransform: "uppercase",
     },
 
     campaignsContentContainer: {
@@ -268,24 +270,23 @@ const CAMPAIGNSDATA = [
         html: (
             <div>
                 <p>
-                    &quot;OMC&apos;s BYH8R (BYE HATER)&quot; is OMC&apos;s is
-                    Out My Closet&apos;s impactful social media campaign
-                    dedicated to addressing and dismantling homophobia and
-                    transphobia within school settings. By collaborating with
-                    Student Government Association (SGA) bodies, OMC initiates
-                    programs such as clothing drives and allyship building
-                    activities. According to GLSEN&apos;s National School
-                    Climate Survey, 70.1% of LGBTQ students reported being
-                    verbally harassed, and 28.9% were physically harassed in the
-                    past year due to their sexual orientation. This campaign
-                    aims to create safer, more inclusive environments for LGBTQ
-                    students by promoting understanding, acceptance, and active
-                    support. Through engaging content and community-driven
-                    initiatives, &quot;OMC&apos;s BYH8R&quot; strives to
-                    eliminate discrimination and foster a culture of respect and
-                    equality in schools. Join us in saying &quot;BYE&quot; to
-                    hate and building a brighter, more inclusive future for all
-                    students.
+                    &quot;OMC&apos;s BYH8R (BYE HATER)&quot; is OMC&apos;s
+                    impactful social media campaign dedicated to addressing and
+                    dismantling homophobia and transphobia within school
+                    settings. By collaborating with Student Government
+                    Association (SGA) bodies, OMC initiates programs such as
+                    clothing drives and allyship building activities. According
+                    to GLSEN&apos;s National School Climate Survey, 70.1% of
+                    LGBTQ students reported being verbally harassed, and 28.9%
+                    were physically harassed in the past year due to their
+                    sexual orientation. This campaign aims to create safer, more
+                    inclusive environments for LGBTQ students by promoting
+                    understanding, acceptance, and active support. Through
+                    engaging content and community-driven initiatives,
+                    &quot;OMC&apos;s BYH8R&quot; strives to eliminate
+                    discrimination and foster a culture of respect and equality
+                    in schools. Join us in saying &quot;BYE&quot; to hate and
+                    building a brighter, more inclusive future for all students.
                 </p>
             </div>
         ),

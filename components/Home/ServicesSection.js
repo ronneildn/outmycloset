@@ -50,7 +50,7 @@ const ServicesSection = (props) => {
                 data = {
                     title: "Education",
                     description:
-                        "Immersive intensive internship for Public Health, Social Work, and Fashion Industry LGBTQ+ students",
+                        "Immersive intensive internship for Public Health, Social Work, and Fashion Industry LGBTQ+ students.",
                     icon: <EducationIcon />,
                     color: theme.palette.primary.accent3,
                 };
