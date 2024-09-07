@@ -43,7 +43,7 @@ const SocialComponent = (props) => {
                     style={{ width: props.size ? props.size : 20 }}
                 />
             ),
-            url: "https://www.facebook.com/OutMyClosetOrg/",
+            url: "https://x.com",
         },
         {
             name: "tumblr",
@@ -53,7 +53,7 @@ const SocialComponent = (props) => {
                     style={{ width: props.size ? props.size : 20 }}
                 />
             ),
-            url: "https://www.facebook.com/OutMyClosetOrg/",
+            url: "https://tumblr.com",
         },
         {
             name: "youtube",
@@ -63,7 +63,7 @@ const SocialComponent = (props) => {
                     style={{ width: props.size ? props.size : 20 }}
                 />
             ),
-            url: "https://www.facebook.com/OutMyClosetOrg/",
+            url: "https://youtube.com",
         },
         {
             name: "linkedIn",
@@ -73,7 +73,7 @@ const SocialComponent = (props) => {
                     style={{ width: props.size ? props.size : 20 }}
                 />
             ),
-            url: "https://www.facebook.com/OutMyClosetOrg/",
+            url: "https://linkedin.com",
         },
     ];
 
